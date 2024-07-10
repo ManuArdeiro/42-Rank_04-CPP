@@ -1,11 +1,17 @@
-NAME		=	megaphone
+NAME		=	accounts
 
 CC			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
-
-SRC			=	megaphone.cpp
-OBJ			=	$(SRC:.cpp=.o)
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I./include -fsanitize=address
 RM			=	rm -rf
+
+SRC			=	src/Accounts.cpp \
+				src/tests.cpp
+OBJ			=	$(SRC:.cpp=.o)
+
+# Define color variables
+YELLOW		=	\033[1;33m
+WHITE		=	\033[1;37m
+LIGHT_GRAY	=	\033[0;37m
 
 %.o:		%.cpp
 			$(CC) $(CFLAGS) -c $< -o $@
@@ -14,7 +20,7 @@ all: 		$(NAME)
 
 $(NAME):	$(OBJ)
 			@echo "$(YELLOW)Creating program...$(WHITE)"
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 			@echo "\n$(LIGHT_GRAY)----- Ready -----\033[0m"
 
 clean:
@@ -33,8 +39,3 @@ run: 		all clean
 			./$(NAME)
 
 .PHONY: all clean fclean re run
-
-# Define color variables
-YELLOW		=	\033[1;33m
-WHITE		=	\033[1;37m
-LIGHT_GRAY	=	\033[0;37m

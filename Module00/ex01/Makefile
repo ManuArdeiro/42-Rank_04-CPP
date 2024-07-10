@@ -1,11 +1,18 @@
-NAME		=	megaphone
+NAME		=	phonebook
 
 CC			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -I./include -fsanitize=address
 
-SRC			=	megaphone.cpp
+SRC			=	src/main.cpp \
+				src/PhoneBook.cpp \
+				src/Contact.cpp
 OBJ			=	$(SRC:.cpp=.o)
 RM			=	rm -rf
+
+# Define color variables
+YELLOW		=	\033[1;33m
+WHITE		=	\033[1;37m
+LIGHT_GRAY	=	\033[0;37m
 
 %.o:		%.cpp
 			$(CC) $(CFLAGS) -c $< -o $@
@@ -33,8 +40,3 @@ run: 		all clean
 			./$(NAME)
 
 .PHONY: all clean fclean re run
-
-# Define color variables
-YELLOW		=	\033[1;33m
-WHITE		=	\033[1;37m
-LIGHT_GRAY	=	\033[0;37m
