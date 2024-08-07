@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ardeiro <Ardeiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 01:23:19 by Ardeiro           #+#    #+#             */
-/*   Updated: 2024/02/11 17:27:30 by Ardeiro          ###   ########.fr       */
+/*   Created: 2024/07/10 16:17:50 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/07/31 23:07:50 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/PhoneBook.hpp"
 #include "../include/Contact.hpp"
-
-using std::cin;
-using std::cout;
-using std::endl;
 
 // Default constructor
 PhoneBook::PhoneBook() : count(0) {};
@@ -25,31 +21,31 @@ void PhoneBook::addContact(void)
     Contact     new_contact;
     std::string str;
 
-	cout << "First name: ";
-	getline(cin, str);
+	std::cout << "First name: ";
+	getline(std::cin, str);
 	new_contact.setFirstName(str);
-	cout << "Last name: ";
-	getline(cin, str);
+	std::cout << "Last name: ";
+	getline(std::cin, str);
 	new_contact.setLastName(str);
-	cout << "Nickname: ";
-	getline(cin, str);
+	std::cout << "Nickname: ";
+	getline(std::cin, str);
 	new_contact.setNickName(str);
     while (1)
     {
-        cout << "Phone number: ";
-		getline(cin, str);
+        std::cout << "Phone number: ";
+		getline(std::cin, str);
 		if (str.empty() || str.find_first_not_of("0123456789") != std::string::npos) 
 		{
-            cin.clear();
+            std::cin.clear();
             clearerr(stdin);
-			cout << "Phone number accepts only numbers." << endl;
+			std::cout << "Phone number accepts only numbers." << std::endl;
 			continue;
 		}
 		new_contact.setPhoneNumber(str);
 		break;
     }
-    cout << "Darkest Secret: ";
-	getline(cin, str);
+    std::cout << "Darkest Secret: ";
+	getline(std::cin, str);
 	new_contact.setDarkestSecret(str);
 	if (count > CONTACTS - 1)
 		this->contacts[count - 1] = new_contact;
@@ -58,20 +54,20 @@ void PhoneBook::addContact(void)
 		this->count++;
 		this->contacts[count - 1] = new_contact;
 	}
-    cout << endl;
-	cout << "Contact saved!" << endl;
-    cout << endl;
+    std::cout << std::endl;
+	std::cout << "Contact saved!" << std::endl;
+    std::cout << std::endl;
 }
 
 void display_contact(Contact contact)
 {
-	cout << endl;
-	cout << "First name: " << contact.getFirstName() << endl;
-	cout << "Last name: " << contact.getLastName() << endl;
-	cout << "Nickname: " << contact.getNickname() << endl;
-	cout << "Phone number: " << contact.getPhoneNumber() << endl;
-	cout << "Darkest secret: " << contact.getDarkestSecret() << endl;
-	cout << endl;
+	std::cout << std::endl;
+	std::cout << "First name: " << contact.getFirstName() << std::endl;
+	std::cout << "Last name: " << contact.getLastName() << std::endl;
+	std::cout << "Nickname: " << contact.getNickname() << std::endl;
+	std::cout << "Phone number: " << contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret: " << contact.getDarkestSecret() << std::endl;
+	std::cout << std::endl;
 }
 
 std::string field_format(const std::string& str)
@@ -89,35 +85,35 @@ void PhoneBook::searchContact(void)
 
     if (this->count == 0)
     {
-        cout << "No contacts to show!!" << endl;
+        std::cout << "No contacts to show!!" << std::endl;
         return ;
     }
-    cout << "\n|     Index|First Name| Last Name|  Nickname|" << endl;
+    std::cout << "\n|     Index|First Name| Last Name|  Nickname|" << std::endl;
     for (i = 0; i < this->count; i++)
     {
-    	cout << endl;
-        cout << std::right << std::setw(10) << i + 1 << "|"; 
-        cout << std::right << std::setw(10) << field_format(this->contacts[i].getFirstName()) << "|"; 
-        cout << std::right << std::setw(10) << field_format(this->contacts[i].getLastName()) << "|"; 
-        cout << std::right << std::setw(10) << field_format(this->contacts[i].getNickname()) << "|"; 
+    	std::cout << std::endl;
+        std::cout << std::right << std::setw(10) << i + 1 << "|"; 
+        std::cout << std::right << std::setw(10) << field_format(this->contacts[i].getFirstName()) << "|"; 
+        std::cout << std::right << std::setw(10) << field_format(this->contacts[i].getLastName()) << "|"; 
+        std::cout << std::right << std::setw(10) << field_format(this->contacts[i].getNickname()) << "|"; 
         
     }
     while (1)
     {
-        cout << endl << "Please select a Contact by typing next just its index number: ";
-	    getline(cin, index_str);
+        std::cout << std::endl << "Please select a Contact by typing next just its index number: ";
+	    getline(std::cin, index_str);
 		if (index_str.empty() || index_str.find_first_not_of("01234567") != std::string::npos) 
 		{
-            cin.clear();
+            std::cin.clear();
             clearerr(stdin);
-			cout << "PhoneBook accepts only the Contact index." << endl;
+			std::cout << "PhoneBook accepts only the Contact index." << std::endl;
 			continue;
 		}
         index_nb = atoi(index_str.c_str());
         if (index_nb > 7)
         {
-            cout << "Please introduce a valid option or I'll kill you!!" << endl;
-            cout <<endl;
+            std::cout << "Please introduce a valid option or I'll kill you!!" << std::endl;
+            std::cout << std::endl;
             continue;
         }
         display_contact(this->contacts[index_nb - 1]);

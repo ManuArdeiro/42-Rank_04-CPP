@@ -1,11 +1,11 @@
-NAME		=	accounts
+NAME		=	violence
 
 vpath			%.hpp include
 vpath			%.cpp src
 vpath			%.o obj
 
 INCLUDE		=   -Iinclude/
-SRC			=	tests.cpp Accounts.cpp
+SRC			=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ_DIR		=   obj
 
 CC			=	c++

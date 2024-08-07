@@ -1,11 +1,11 @@
-NAME		=	accounts
+NAME		=	zombie
 
 vpath			%.hpp include
 vpath			%.cpp src
 vpath			%.o obj
 
 INCLUDE		=   -Iinclude/
-SRC			=	tests.cpp Accounts.cpp
+SRC			=	main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJ_DIR		=   obj
 
 CC			=	c++

@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 16:17:01 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/07/10 16:17:04 by jolopez-         ###   ########.fr       */
+/*   Created: 2024/07/23 11:38:31 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/08/03 22:24:04 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#pragma once
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream> // cin, cout, endl
 # include <string> // string class
-# include <cstdlib> // exit() && EXIT_* macros
-# include <stdio.h> // clearerr()
-# include <iomanip> // setw()
-# include "Contact.hpp"
+# include <sstream>
 
-# define CONTACTS 8
-
-class PhoneBook
+class Zombie
 {
-    public:
-        PhoneBook();
-
-        void    addContact();
-        void    searchContact();
-
-    private:
-        int     count;
-		Contact contacts[CONTACTS];
+	public:
+		void	announce(void) const;
+		void	set_name(std::string name);
+		
+        Zombie(void);
+		Zombie(std::string name);
+		~Zombie(void);
+		
+	private:
+		std::string name;
+		
 };
 
-#endif // PHONEBOOK_HPP
+Zombie*	newZombie(std::string name);
+void	randomChump(std::string name);
+Zombie*	zombieHorde(int N, std::string name);
+void	deleteZombies(Zombie* zombieArray);
+void	hordeTest(int N, Zombie* zombieArray);
+
+#endif

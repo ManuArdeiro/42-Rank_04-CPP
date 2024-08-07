@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ardeiro <Ardeiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 01:11:27 by Ardeiro           #+#    #+#             */
-/*   Updated: 2024/04/24 17:33:25 by Ardeiro          ###   ########.fr       */
+/*   Created: 2024/07/10 16:16:42 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/07/10 16:16:43 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ardeiro <Ardeiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 01:13:09 by Ardeiro           #+#    #+#             */
-/*   Updated: 2024/02/07 01:22:36 by Ardeiro          ###   ########.fr       */
+/*   Created: 2024/07/10 16:17:35 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/07/10 17:23:38 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Contact.hpp"
+#include "Contact.hpp"
 
 void Contact::setFirstName(std::string str)
 {

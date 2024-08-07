@@ -1,11 +1,11 @@
-NAME		=	accounts
+NAME		=	refs
 
 vpath			%.hpp include
 vpath			%.cpp src
 vpath			%.o obj
 
 INCLUDE		=   -Iinclude/
-SRC			=	tests.cpp Accounts.cpp
+SRC			=	main.cpp
 OBJ_DIR		=   obj
 
 CC			=	c++

@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ardeiro <Ardeiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 01:10:19 by Ardeiro           #+#    #+#             */
-/*   Updated: 2024/02/08 00:47:38 by Ardeiro          ###   ########.fr       */
+/*   Created: 2024/07/10 16:17:43 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/07/31 23:05:13 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/PhoneBook.hpp"
 #include "../include/Contact.hpp"
-
-using std::cin;
-using std::cout;
-using std::endl;
 
 static bool ft_valid_option(const std::string option) 
 {
@@ -25,7 +21,7 @@ static bool ft_valid_option(const std::string option)
 
 static void ft_print_menu(void)
 {
-    cout << "*------------------------------------------*\n"
+    std::cout << "*------------------------------------------*\n"
             "|                                          |\n"
             "|      jolopez-    Phone Book              |\n"
             "|                                          |\n"
@@ -35,7 +31,7 @@ static void ft_print_menu(void)
             "|      (2) SEARCH - Display a contact      |\n"
             "|      (3) EXIT - Exit PhoneBook           |\n"
             "|                                          |\n"
-            "*------------------------------------------*" << endl;
+            "*------------------------------------------*" << std::endl;
 }
 
 /*  The if (cin.eof() == true) condition is used to check if the end of
@@ -53,17 +49,17 @@ std::string ft_get_option(void)
 
     while (1)
     {
-        cout << "phonebook> ";
-        getline(cin, option);
-        if (cin.eof() == true)
+        std::cout << "phonebook> ";
+        getline(std::cin, option);
+        if (std::cin.eof() == true)
         {
-            cin.clear();
+            std::cin.clear();
             clearerr(stdin);
         }
         if (!option.empty() && ft_valid_option(option))
             break;
-        cin.clear();
-        cout << "Please insert a valid option!" << endl;
+        std::cin.clear();
+        std::cout << "Please insert a valid option!" << std::endl;
     }
     return option;
 }
@@ -83,7 +79,7 @@ int main(void)
             phonebook.searchContact();
         else if (option == "EXIT" || option == "3")
         {
-            cout << "Service cost: 5€" << endl;
+            std::cout << "Service cost: 5€" << std::endl;
             return EXIT_SUCCESS;
         }
     }

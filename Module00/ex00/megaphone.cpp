@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ardeiro <Ardeiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 19:24:34 by Ardeiro           #+#    #+#             */
-/*   Updated: 2024/04/24 16:31:10 by Ardeiro          ###   ########.fr       */
+/*   Created: 2024/07/10 16:17:13 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/07/31 23:01:24 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ int main(int argc, char **argv)
 
     if (argc == 1)
     {
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
         return EXIT_SUCCESS;
     }
     while (i < argc)
     {
-        cout << string_to_upper(argv[i]) << " ";
+        std::cout << string_to_upper(argv[i]) << " ";
         i++;
     }
-    cout << endl;
+    std::cout << std::endl;
     return EXIT_SUCCESS;
 }
