@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 18:19:36 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/09 20:34:48 by jolopez-         ###   ########.fr       */
+/*   Created: 2024/08/09 18:24:00 by jolopez-          #+#    #+#             */
+/*   Updated: 2024/08/09 21:10:59 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//	Header-protection
-#pragma once
+#include "Harl.hpp"
 
-//	includes
-#include <string>
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-
-class Harl
+int	main(int argc, char **argv)
 {
-	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
+    std::string message;
+    Harl harl;
 
-	public:
-		void	complain(std::string level);
-};
+	if (argc != 2)
+	{
+		std::cerr << "Invalid number of arguments!!" << std::endl;
+		return (EXIT_FAILURE);
+	}
+	message = argv[1];
+	harl.complain(message);
+	return (EXIT_SUCCESS);
+}

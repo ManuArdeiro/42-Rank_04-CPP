@@ -67,7 +67,8 @@
 		"random": "cpp",
 		"type_traits": "cpp",
 		"utility": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"fstream": "cpp"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

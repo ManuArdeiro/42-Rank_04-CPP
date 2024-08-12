@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 18:23:21 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/09 20:49:28 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/09 21:16:14 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,19 @@ void Harl::complain(std::string level)
 {
     void (Harl::*functions[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string levels[] = {"debug", "info", "warning", "error"};
+	bool		printed_message = false;
 	
 	for (int i = 0; i < 4; i++)
 	{
         if (levels[i] == level)
 		{
-            (this->*functions[i])();
+			for (int j = i; j < 4; j++)
+            	(this->*functions[j])();
+			printed_message = true;
             break;
         }
     }
+	if (printed_message == false)
+		std::cout << "Argument is not a valid comment!!" << std::endl;
 	return ;
 }
