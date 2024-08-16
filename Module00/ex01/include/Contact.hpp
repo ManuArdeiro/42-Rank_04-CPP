@@ -6,11 +6,9 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:16:42 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/07/10 16:16:43 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:19:37 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP

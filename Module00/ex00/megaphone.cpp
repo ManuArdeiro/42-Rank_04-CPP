@@ -6,15 +6,12 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:17:13 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/07/31 23:01:24 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:18:49 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream> // cout, endl
 #include <cstdlib> // EXIT_ macros
-
-using std::cout;
-using std::endl;
 
 std::string string_to_upper(std::string arg)
 {
@@ -30,7 +27,8 @@ std::string string_to_upper(std::string arg)
 
 int main(int argc, char **argv)
 {
-    int i = 1;
+    int 		i = 1;
+	std::string	str;
 
     if (argc == 1)
     {
@@ -39,7 +37,8 @@ int main(int argc, char **argv)
     }
     while (i < argc)
     {
-        std::cout << string_to_upper(argv[i]) << " ";
+		str = argv[i];
+        std::cout << string_to_upper(str) << " ";
         i++;
     }
     std::cout << std::endl;

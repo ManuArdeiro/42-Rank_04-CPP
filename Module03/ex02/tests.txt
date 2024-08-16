@@ -1,0 +1,1356 @@
+
+[31mCLAPTRAP:[0m
+[34m
+Constructor ClapTrap with name JonCT -> ClapTrap JonCT("JonCT")
+[0m
+ClapTrap Constructor called for JonCT with:
+name =  JonCT
+hit points =  0
+energy points =  0
+attack damage =  0
+
+[31mFRAGTRAP:[0m
+[32m
+Constructor ScavTrap with name SamST -> ScavTrap SamST("SamST")
+[0m
+ClapTrap Constructor called for SamST with:
+name =  SamST
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mScavTrap Constructor called for SamST.name =  SamST
+hit points =  100
+energy points =  50
+attack damage =  20
+[0m
+
+[31mFRAGTRAP:[0m
+[32m
+Default Constructor FragTrap TomST -> FragTrap IriaFT
+[0m
+ClapTrap Default Constructor called without values.
+name =  no one
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Default Constructor called.name =  no one
+hit points =  100
+energy points =  100
+attack damage =  30
+[0m
+[32m
+Constructor FragTrap with name SamST -> FragTrap RoiFT("SamST")
+[0m
+ClapTrap Constructor called for SamST with:
+name =  SamST
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Constructor called for SamST.name =  SamST
+hit points =  100
+energy points =  100
+attack damage =  30
+[0m
+[32m
+End of function:
+[0m
+[32mFragTrap Destructor for SamST called.[0m
+ClapTrap Destructor for SamST called
+[32mFragTrap Destructor for no one called.[0m
+ClapTrap Destructor for no one called
+[32mScavTrap Destructor for SamST called.[0m
+ClapTrap Destructor for SamST called
+ClapTrap Destructor for JonCT called
+
+[31mCLAPTRAP:[0m
+[34m
+Default Constructor ClapTrap TomCT -> ClapTrap TomCT
+[0m
+ClapTrap Default Constructor called without values.
+name =  no one
+hit points =  0
+energy points =  0
+attack damage =  0
+[34m
+Constructor ClapTrap with name JonCT -> ClapTrap JonCT("JonCT")
+[0m
+ClapTrap Constructor called for JonCT with:
+name =  JonCT
+hit points =  0
+energy points =  0
+attack damage =  0
+[34m
+Constructor ClapTrap with name SamST and parameters -> ClapTrap SamCT("SamCT", 10, 5, 2)
+[0m
+ClapTrap Constructor called for SamCT with:
+name =  SamCT
+hit points =  10
+energy points =  5
+attack damage =  2
+[34m
+Copy Constructor ClapTrap JinCT from SamCT -> ClapTrap JinCT(SamCT)
+[0m
+ClapTrap Copy Constructor called with:
+name =  SamCT
+hit points =  10
+energy points =  5
+attack damage =  2
+[34m
+Copy Assignment Operator ClapTrap TimCT from JinCT -> ClapTrap TimCT = JinCT;
+[0m
+ClapTrap Copy Constructor called with:
+name =  SamCT
+hit points =  10
+energy points =  5
+attack damage =  2
+
+[33mMETHODS:[0m
+[34m
+JinCT attacks a non-existing ClapTrap: JinCT.attack("some other robot")
+[0m
+ClapTrap SamCT attacks some other robot, causing 2 points of damage!
+[34m
+JonCT attacks JonCT: JonCT.attack("JonCT")
+[0m
+ClapTrap JonCT is not able to attack to JonCT, because he has no energy points left.
+[34m
+TimCT takes 2 points of damage: TimCT.takeDamage(2)
+[0m
+ClapTrap SamCT took 2 points of damage and it has 8 hit points left!
+[34m
+JonCT repaires 4 points: JonCT.beRepaired(4)
+[0m
+ClapTrap JonCT can't repair 4 any points of damage because it hasn't any hit points.
+[34m
+JinCT attacks TimCT 7 TimCTes: 7 x JinCT.attack("TimCT")
+[0m
+ClapTrap SamCT attacks TimCT, causing 2 points of damage!
+ClapTrap SamCT attacks TimCT, causing 2 points of damage!
+ClapTrap SamCT attacks TimCT, causing 2 points of damage!
+ClapTrap SamCT attacks TimCT, causing 2 points of damage!
+ClapTrap SamCT is not able to attack to TimCT, because he has no energy points left.
+ClapTrap SamCT is not able to attack to TimCT, because he has no energy points left.
+ClapTrap SamCT is not able to attack to TimCT, because he has no energy points left.
+
+[31mSCAVTRAP:[0m
+[32m
+Default Constructor ScavTrap TomST -> ScavTrap TomST
+[0m
+ClapTrap Default Constructor called without values.
+name =  no one
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mScavTrap Default Constructor called.name =  no one
+hit points =  100
+energy points =  50
+attack damage =  20
+[0m
+[32m
+Constructor ScavTrap with name SamST -> ScavTrap SamST("SamST")
+[0m
+ClapTrap Constructor called for SamST with:
+name =  SamST
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mScavTrap Constructor called for SamST.name =  SamST
+hit points =  100
+energy points =  50
+attack damage =  20
+[0m
+[32m
+Constructor ScavTrap with name JonST and parameters -> ScavTrap JonST("JonST", 100, 50, 20)
+[0m
+ClapTrap Constructor called for JonST with:
+name =  JonST
+hit points =  100
+energy points =  50
+attack damage =  20
+[32mScavTrap Constructor called for JonST.name =  JonST
+hit points =  100
+energy points =  50
+attack damage =  20
+[0m
+[32m
+Copy Constructor ScavTrap from JonST -> ScavTrap JinST(JonST)
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonST
+hit points =  100
+energy points =  50
+attack damage =  20
+[32mScavTrap Copy Constructor called for name =  JonST
+hit points =  100
+energy points =  50
+attack damage =  20
+JonST[0m
+[32m
+Copy Assignment Operator ScavTrap TimST from JinCT -> ScavTrap TimST = JinST
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonST
+hit points =  100
+energy points =  50
+attack damage =  20
+[32mScavTrap Copy Constructor called for name =  JonST
+hit points =  100
+energy points =  50
+attack damage =  20
+JonST[0m
+
+[33mMETHODS:[0m
+[32m
+JinST attacks a non-existing ClapTrap: JinST.attack("some other robot")
+[0m
+[32mScravTrap JonST attacks some other robot, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  49
+attack damage =  20
+[0m
+[32m
+JonST attacks JonST: JonST.attack("JonST")
+[0m
+[32mScravTrap JonST attacks JonST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  49
+attack damage =  20
+[0m
+[32m
+TimST takes 2 points of damage: TimST.takeDamage(2)
+[0m
+ClapTrap JonST took 2 points of damage and it has 98 hit points left!
+[32m
+JonST repaires 4 points: JonST.beRepaired(4)
+[0m
+ClapTrap JonST repairs 4 points of damage and it has 104 hit points left!
+[32m
+JinST attacks TimST 7 TimCTes: 7 x JinST.attack("TimST")
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  48
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  47
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  46
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  45
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  44
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  43
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  42
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  41
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  40
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  39
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  38
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  37
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  36
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  35
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  34
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  33
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  32
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  31
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  30
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  29
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  28
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  27
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  26
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  25
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  24
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  23
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  22
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  21
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  20
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  19
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  18
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  17
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  16
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  15
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  14
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  13
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  12
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  11
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  10
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  9
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  8
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  7
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  6
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  5
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  4
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  3
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  2
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  1
+attack damage =  20
+[0m
+[32mScravTrap JonST attacks TimST, causing 20 points of damage![0m
+name =  JonST
+hit points =  100
+energy points =  0
+attack damage =  20
+[0m
+[32mScravTrap JonST is not able to attack to TimST, because he has no energy points left.name =  JonST
+hit points =  100
+energy points =  0
+attack damage =  20
+[0m
+[0m
+[32mScravTrap JonST is not able to attack to TimST, because he has no energy points left.name =  JonST
+hit points =  100
+energy points =  0
+attack damage =  20
+[0m
+[0m
+[32mScravTrap JonST is not able to attack to TimST, because he has no energy points left.name =  JonST
+hit points =  100
+energy points =  0
+attack damage =  20
+[0m
+[0m
+
+[31mFRAGTRAP:[0m
+[32m
+Default Constructor FragTrap TomST -> FragTrap IriaFT
+[0m
+ClapTrap Default Constructor called without values.
+name =  no one
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Default Constructor called.name =  no one
+hit points =  100
+energy points =  100
+attack damage =  30
+[0m
+[32m
+Constructor FragTrap with name SamST -> FragTrap RoiFT("SamST")
+[0m
+ClapTrap Constructor called for SamST with:
+name =  SamST
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Constructor called for SamST.name =  SamST
+hit points =  100
+energy points =  100
+attack damage =  30
+[0m
+[32m
+Constructor FragTrap with name SamST -> FragTrap JuliaFT("RoiFT")
+[0m
+ClapTrap Constructor called for RoiFT with:
+name =  RoiFT
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Constructor called for RoiFT.name =  RoiFT
+hit points =  100
+energy points =  100
+attack damage =  30
+[0m
+[32m
+Constructor FragTrap with name JonST and parameters -> FragTrap IreneFT("JonST", 100, 100, 30)
+[0m
+ClapTrap Constructor called for JonST with:
+name =  JonST
+hit points =  100
+energy points =  100
+attack damage =  30
+[32mFragTrap Constructor called for JonST.name =  JonST
+hit points =  100
+energy points =  100
+attack damage =  30
+[0m
+[32m
+Copy Constructor FragTrap from JonST -> FragTrap AnaFT(JonCT)
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonCT
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Copy Constructor called for name =  JonCT
+hit points =  0
+energy points =  0
+attack damage =  0
+JonCT[0m
+[32m
+Copy Constructor FragTrap from JonST -> FragTrap BeaFT(JonST)
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+[32mFragTrap Copy Constructor called for name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+JonST[0m
+[32m
+Copy Constructor FragTrap from JonST -> FragTrap BobFT(BeaFT)
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+[32mFragTrap Copy Constructor called for name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+JonST[0m
+[32m
+Copy Assignment Operator FragTrap TimCT from JinCT -> FragTrap JeanFT = JonCT
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonCT
+hit points =  0
+energy points =  0
+attack damage =  0
+[32mFragTrap Copy Constructor called for name =  JonCT
+hit points =  0
+energy points =  0
+attack damage =  0
+JonCT[0m
+[32m
+Copy Assignment Operator FragTrap TimCT from JinCT -> FragTrap MatiFT = JonST
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+[32mFragTrap Copy Constructor called for name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+JonST[0m
+[32m
+Copy Assignment Operator FragTrap TimCT from JinCT -> FragTrap ConsuFT = MatiFT
+[0m
+ClapTrap Copy Constructor called with:
+name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+[32mFragTrap Copy Constructor called for name =  JonST
+hit points =  104
+energy points =  48
+attack damage =  20
+JonST[0m
+
+[33mMETHODS:[0m
+[32m
+JinST attacks a non-existing ClapTrap: RoiFT.attack("some other robot")
+[0m
+[32mScravTrap SamST attacks some other robot, causing 30 points of damage![0m
+name =  SamST
+hit points =  100
+energy points =  99
+attack damage =  30
+[0m
+[32m
+JonST attacks JonST: RoiFT.attack("JonST")
+[0m
+[32mScravTrap SamST attacks JonST, causing 30 points of damage![0m
+name =  SamST
+hit points =  100
+energy points =  98
+attack damage =  30
+[0m
+[32m
+TimST takes 2 points of damage: TiRoiFTmST.takeDamage(20)
+[0m
+ClapTrap SamST took 20 points of damage and it has 80 hit points left!
+[32m
+JonST repaires 4 points: RoiFT.beRepaired(40)
+[0m
+ClapTrap SamST repairs 40 points of damage and it has 120 hit points left!
+[32m
+JinST attacks TimST 7 TimCTes: 7 x JinST.attack("TimST")
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  99
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  98
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  97
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  96
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  95
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  94
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  93
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  92
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  91
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  90
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  89
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  88
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  87
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  86
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  85
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  84
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  83
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  82
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  81
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  80
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  79
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  78
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  77
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  76
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  75
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  74
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  73
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  72
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  71
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  70
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  69
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  68
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  67
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  66
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  65
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  64
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  63
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  62
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  61
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  60
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  59
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  58
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  57
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  56
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  55
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  54
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  53
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  52
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  51
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  50
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  49
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  48
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  47
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  46
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  45
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  44
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  43
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  42
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  41
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  40
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  39
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  38
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  37
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  36
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  35
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  34
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  33
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  32
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  31
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  30
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  29
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  28
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  27
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  26
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  25
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  24
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  23
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  22
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  21
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  20
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  19
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  18
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  17
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  16
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  15
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  14
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  13
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  12
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  11
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  10
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  9
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  8
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  7
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  6
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  5
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  4
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  3
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  2
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  1
+attack damage =  30
+[0m
+[32mScravTrap no one attacks RoiFT, causing 30 points of damage![0m
+name =  no one
+hit points =  100
+energy points =  0
+attack damage =  30
+[0m
+[32mScravTrap no one is not able to attack to RoiFT, because he has no energy points left.name =  no one
+hit points =  100
+energy points =  0
+attack damage =  30
+[0m
+[0m
+[32mScravTrap no one is not able to attack to RoiFT, because he has no energy points left.name =  no one
+hit points =  100
+energy points =  0
+attack damage =  30
+[0m
+[0m
+[32m
+End of program:
+[0m
+[32mFragTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mFragTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mFragTrap Destructor for JonCT called.[0m
+ClapTrap Destructor for JonCT called
+[32mFragTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mFragTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mFragTrap Destructor for JonCT called.[0m
+ClapTrap Destructor for JonCT called
+[32mFragTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mFragTrap Destructor for RoiFT called.[0m
+ClapTrap Destructor for RoiFT called
+[32mFragTrap Destructor for SamST called.[0m
+ClapTrap Destructor for SamST called
+[32mFragTrap Destructor for no one called.[0m
+ClapTrap Destructor for no one called
+[32mScavTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mScavTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mScavTrap Destructor for JonST called.[0m
+ClapTrap Destructor for JonST called
+[32mScavTrap Destructor for SamST called.[0m
+ClapTrap Destructor for SamST called
+[32mScavTrap Destructor for no one called.[0m
+ClapTrap Destructor for no one called
+ClapTrap Destructor for SamCT called
+ClapTrap Destructor for SamCT called
+ClapTrap Destructor for SamCT called
+ClapTrap Destructor for JonCT called
+ClapTrap Destructor for no one called

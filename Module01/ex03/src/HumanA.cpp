@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 11:21:04 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/07 19:53:25 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:50:22 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 	ensures that the Weapon always exists and does not need additional checks.
 	It is more efficient because there is no need for pointer checks and no risk
 	of having a nullptr.	*/
-HumanA::HumanA(std::string name, Weapon &Weapon) : _weapon(Weapon)
+HumanA::HumanA(std::string name, Weapon &Weapon)
 {
 	this->_name = name;
+	this->_weapon = Weapon;
 }
 
 //	Destructor

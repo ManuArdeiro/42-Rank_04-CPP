@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 18:19:36 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/09 20:34:48 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/16 02:03:48 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ class Harl
 		void	error(void);
 
 	public:
+		Harl();
+		~Harl();
 		void	complain(std::string level);
 };

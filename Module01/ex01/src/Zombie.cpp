@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 11:40:38 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/03 22:24:29 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:40:03 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ Zombie::Zombie(void)
 }
 
 // Constructor with parameter (name)
-Zombie::Zombie(std::string name) : name(name) {}
+Zombie::Zombie(std::string name) : name(name) 
+{
+}
 
 // Destructor
 Zombie::~Zombie()
