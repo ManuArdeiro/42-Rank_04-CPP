@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:15:57 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/14 20:24:07 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/17 20:59:14 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class ClapTrap
 		std::string		_name;
 		unsigned int	_hit;
 		unsigned int	_energy;
-
-	private:
 		unsigned int	_attack;
 
 	public:

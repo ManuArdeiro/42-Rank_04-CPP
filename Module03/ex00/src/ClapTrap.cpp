@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:24:51 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/08/16 02:36:06 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/08/17 17:28:55 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,10 +143,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_hit >= 1 && this->_energy >= 1)
 	{
-		std::cout << "ClapTrap " << this->_name << " had " << this->_hit << amount;
-		std::cout << " hit point, now!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " had " << this->_hit;
+		std::cout << ", repaires " << amount << " points, and has ";
 		this->_hit += amount;
+		std::cout << this->_hit << " hit point now!" << std::endl;
 		this->_energy--;
+		std::cout << "It has " << this->_energy << " energy points left.";
 	}
 	return ;
 }
