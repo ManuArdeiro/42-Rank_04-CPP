@@ -12,6 +12,17 @@
 
 #include "Contact.hpp"
 
+// Constructor
+Contact::Contact()
+{
+}
+
+// Destructor
+Contact::~Contact()
+{
+}
+
+//Setters:
 void Contact::setFirstName(std::string str)
 {
     this->first_name = str;
@@ -37,27 +48,28 @@ void Contact::setDarkestSecret(std::string str)
     this->darkest_secret = str;
 }
 
-std::string Contact::getFirstName(void)
+//Getters:
+std::string Contact::getFirstName(void) const
 {
     return this->first_name;
 }
 
-std::string Contact::getLastName(void)
+std::string Contact::getLastName(void) const
 {
     return this->last_name;
 }
 
-std::string Contact::getNickname(void)
+std::string Contact::getNickname(void) const
 {
     return this->nickname;
 }
 
-std::string Contact::getPhoneNumber(void)
+std::string Contact::getPhoneNumber(void) const
 {
     return this->phone_number;
 }
 
-std::string Contact::getDarkestSecret(void)
+std::string Contact::getDarkestSecret(void) const
 {
     return this->darkest_secret;
 }

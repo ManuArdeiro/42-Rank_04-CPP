@@ -10,8 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
 #include "Point.hpp"
+
+//Area A = [ x1(y2 – y3) + x2(y3 – y1) + x3(y1-y2)]/2
+
+static float area (const Point p1, const Point p2, const Point p3)
+{
+	float	area;
+
+	area =	(
+			( p1.get_X().toFloat() * ( p2.get_Y().toFloat() - p3.get_Y().toFloat() ) )
+			+ ( p2.get_X().toFloat() * ( p3.get_Y().toFloat() - p1.get_Y().toFloat() ) )
+			+ ( p3.get_X().toFloat() * ( p1.get_Y().toFloat() - p2.get_Y().toFloat() ) )
+			)
+			/ 2;
+
+	if (area >= 0)
+		return (area);
+	else
+		return (area * -1);
+}
+
+bool bsp(const Point a, const Point b, const Point c, const Point p)
+{
+	float d0, d1, d2, d3;
+	bool ret_val = false;
+
+	d0 = area(a, b, c);
+	d1 = area(p, a, b);
+	d2 = area(p, b, c);
+	d3 = area(p, a, c);
+
+	if ( d1 == 0 || d2 == 0 || d3 == 0)
+		ret_val = false;
+	else if ( d1 + d2 + d3 == d0 )
+		ret_val = true;
+
+	return (ret_val);
+}
 
 int is_valid_number(const std::string &option)
 {

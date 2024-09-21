@@ -15,26 +15,27 @@
 
 /****CONSTRUCTORS**************************************************************/
 
-Point::Point(void) : _x(0), _y(0)
+Point::Point(): _x(0), _y(0)
 {
 	// std::cout << "Point created at (0, 0)" << std::endl;
 }
 
-Point::Point(const Fixed x, const Fixed y)
+Point::Point(const Fixed x, const Fixed y): 
+	_x(x),
+	_y(y)
 {
-	this->_x = x;
-	this->_y = y;
-	// std::cout << "Point created at (" << this->_x.toFloat() << ", ";
-	std::cout << this->_y.toFloat() << ")" << std::endl;
+	// std::cout << "Constuctor with parameters called." << std::endl;
 }
 
-Point::Point(const Point &other)
+Point::Point(const Point &other):
+	_x(other.get_X()),
+	_y(other.get_Y())
 {
-	this->_x = other._x;
-	this->_y = other._y;
-	// std::cout << "Point created at (" << this->_x.toFloat() << ", ";
-	// std::cout << this->_y.toFloat() << ")" << std::endl;
+	// std::cout << "Point Copy Constructor called" << std::endl;
+	// *this = other;
 }
+
+/****COPY ASSIGMENT OPERATOR OVERLOAD******************************************/
 
 Point &Point::operator=(const Point &other)
 {
@@ -57,13 +58,15 @@ Point::~Point()
 
 /****METHODS*******************************************************************/
 
-int		*Point::getCoordinates(void) const
+const Fixed		Point::get_X(void) const
 {
-	int* coordinates = new int[2];
-    coordinates[0] = this->_x.toInt();
-    coordinates[1] = this->_y.toInt();
-    
-    return coordinates;
+	return (this->_x);
+}
+
+const Fixed			Point::get_Y(void) const
+{
+
+	return (this->_y);
 }
 
 void	Point::setCoordinates(const Fixed x, const Fixed y)

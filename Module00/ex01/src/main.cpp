@@ -52,10 +52,7 @@ std::string ft_get_option(void)
         std::cout << "phonebook> ";
         getline(std::cin, option);
         if (std::cin.eof() == true)
-        {
-            std::cin.clear();
             clearerr(stdin);
-        }
         if (!option.empty() && ft_valid_option(option))
             break;
         std::cin.clear();

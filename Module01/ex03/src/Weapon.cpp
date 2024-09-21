@@ -18,7 +18,9 @@ Weapon::Weapon(void)
 }
 
 //	Constructor with parameters
-Weapon::Weapon(const std::string name) : _type(name) {}
+Weapon::Weapon(const std::string name) : _type(name)
+{
+}
 
 //	Destructor
 Weapon::~Weapon()

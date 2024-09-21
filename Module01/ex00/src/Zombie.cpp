@@ -13,10 +13,13 @@
 #include "Zombie.hpp"
 
 // Constructor
-Zombie::Zombie(std::string name) : name(name) {}
+Zombie::Zombie(std::string name) : name(name)
+{
+}
 
 // Destructor
-Zombie::~Zombie() {
+Zombie::~Zombie()
+{
     std::cout << name << " is destroyed" << std::endl;
 }
 

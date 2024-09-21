@@ -39,8 +39,8 @@ static std::string get_option(void)
 	if (option != "1" && option != "2" && option != "3" && option != "4"
 		&& option != "")
 	{
-		std::cerr << "No valid option. Please press 1, 2, 3, 4";
-		std::cerr << " or ENTER!!" << std::endl;
+		std::cerr << "No valid option. I won't play more with you :( ";
+		exit(0);
 	}
 	if (option == "")
 		return ("");
@@ -58,7 +58,7 @@ int	main(void)
 		message = get_option();
 		if (message == "")
 		{
-			std::cout << "No more complains...!!" << std::endl;
+			std::cout << "No more complains from you...!!\n" << std::endl;
 			return (EXIT_SUCCESS);
 		}
 		else

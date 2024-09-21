@@ -40,7 +40,8 @@ std::string	replace_words(std::string line, const std::string word,
 	
 	peek() is a function to "spy" the next character to be readed.	
 	
-	.c_str() converts the std::string to const char*, what is expected by std::xfstream.	*/
+	.c_str() converts the std::string to const char*, what is expected by
+	std::xfstream. It is needed for C++98, not in C++11.	*/
 int	read_file(std::string &filename, std::string word, std::string replacer)
 {
 	std::ifstream	inputFile(filename.c_str());
@@ -66,6 +67,7 @@ int	read_file(std::string &filename, std::string word, std::string replacer)
 	outputFile.close();
 	return (EXIT_SUCCESS);
 }
+
 int	main(int argc, char **argv)
 {
 	if (argc != 4)

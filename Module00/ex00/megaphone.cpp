@@ -19,7 +19,7 @@ std::string string_to_upper(std::string arg)
 
     while (i < arg.length())
     {
-        arg[i] = toupper(arg[i]);
+        arg[i] = std::toupper(arg[i]);
         i++;
     }
     return arg;

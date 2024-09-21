@@ -12,6 +12,16 @@
 
 #include "Zombie.hpp"
 
+/*	ostringstream  is a variant of std::ostream that writes its output to an
+	object of type std::string instead of writing to standard output like
+	std::cout or a file.
+	
+	Purpose of std::ostringstream:
+    	1.-	It allows formatting data and storing it in a std::string object,
+			instead of writing to the console or a file.
+    	2.-	It is useful when you want to build or generate a string by inserting
+			multiple pieces of data of different types and then obtain the result
+			as a std::string.	*/
 static std::string to_string(int value)
 {
     std::ostringstream nbString;

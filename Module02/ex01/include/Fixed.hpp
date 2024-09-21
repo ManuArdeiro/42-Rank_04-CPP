@@ -42,5 +42,5 @@ class Fixed {
 		int		toInt(void) const;
 };
 
-std::ostream    &operator<<(std::ostream &o, Fixed const &fixed);
+std::ostream    &operator<<(std::ostream &os, Fixed const &fixed);
 

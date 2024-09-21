@@ -22,8 +22,9 @@ class HumanB
 {
 	public:
 		void	attack(void);	
-		void	setWeapon(Weapon &_weapon);
+		void	setWeapon(Weapon &club);
 	
+		HumanB(std::string name, Weapon *club);
 		HumanB(std::string name);
 		~HumanB();
 		

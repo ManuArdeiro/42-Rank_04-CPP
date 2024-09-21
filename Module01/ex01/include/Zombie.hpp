@@ -11,12 +11,10 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
 
-# include <iostream> // cin, cout, endl
-# include <string> // string class
-# include <sstream>
+#include <iostream> // cin, cout, endl
+#include <string> // string class
+#include <sstream>
 
 class Zombie
 {
@@ -38,5 +36,3 @@ void	randomChump(std::string name);
 Zombie*	zombieHorde(int N, std::string name);
 void	deleteZombies(Zombie* zombieArray);
 void	hordeTest(int N, Zombie* zombieArray);
-
-#endif

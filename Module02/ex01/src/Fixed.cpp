@@ -23,7 +23,7 @@ Fixed::Fixed() : _fixedPointValue(0)
 	zeros. */
 Fixed::Fixed(const int nb)
 {
-	std::cout << "Fixed int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->_fixedPointValue = nb << this->_fractionalBits;
 }
 
@@ -42,7 +42,7 @@ Fixed::Fixed(const int nb)
 	_fixedPointValue is as accurate as possible.	*/
 Fixed::Fixed(const float nb)
 {
-    std::cout << "Fixed float constructor called" << std::endl;
+    std::cout << "Float constructor called" << std::endl;
     this->_fixedPointValue = roundf(nb * (1 << this->_fractionalBits));
 }
 
@@ -98,7 +98,7 @@ int		Fixed::toInt(void) const
 	is called.
 	C++ also allows operator overloading, which lets you define how certain operators,
 	like +, -, *, <<, and others, behave for custom data types.
-	In this case, the overloaded operator<< function takes an output stream
+	In this case, the overloaded operator << function takes an output stream
 	(std::ostream& os) and a Fixed object and returns the output stream after adding
 	the desired representation of the Fixed object. This allows std::cout << d to
 	work correctly.

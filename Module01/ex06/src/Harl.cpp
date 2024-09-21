@@ -42,6 +42,7 @@ void Harl::error(void)
 void Harl::complain(std::string level)
 {
     void (Harl::*functions[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	
 	std::string levels[] = {"debug", "info", "warning", "error"};
 	bool		printed_messages = false;
 	

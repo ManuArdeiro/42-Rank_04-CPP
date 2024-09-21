@@ -10,29 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#pragma once
 
-# include <iostream> // cin, cout, endl
-# include <string> // string class
-# include <cstdlib> // exit() && EXIT_* macros
-# include <stdio.h> // clearerr()
-# include <iomanip> // setw()
-# include "Contact.hpp"
+#include <iostream> // cin, cout, endl
+#include <string> // string class
+#include <cstdlib> // exit() && EXIT_* macros
+#include <stdio.h> // clearerr()
+#include <iomanip> // setw()
+#include "Contact.hpp"
 
 # define CONTACTS 8
 
 class PhoneBook
 {
     public:
+        // Methods
+        void    addContact();
+        void    searchContact() const;
+
+        // Constructor
         PhoneBook();
 
-        void    addContact();
-        void    searchContact();
+        // Destructor
+        ~PhoneBook();
 
     private:
+        // Attributes
         int     count;
 		Contact contacts[CONTACTS];
 };
-
-#endif // PHONEBOOK_HPP

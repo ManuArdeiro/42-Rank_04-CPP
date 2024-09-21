@@ -10,35 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#pragma once
 
-# include <iostream> // cin, cout, endl
-# include <string> // string class
-# include <cstdlib> // exit() && EXIT_* macros
-# include <stdio.h> // clearerr()
+#include <iostream> // cin, cout, endl
+#include <string> // string class
+#include <cstdlib> // exit() && EXIT_* macros
+#include <stdio.h> // clearerr()
 
 class Contact
 {
     public:
+        // Setters:
         void setFirstName(std::string str);
         void setLastName(std::string str);
         void setNickName(std::string str);
         void setPhoneNumber(std::string str);
         void setDarkestSecret(std::string str);
 
-        std::string getFirstName(void);
-        std::string	getNickname(void);
-        std::string	getLastName(void);
-        std::string	getPhoneNumber(void);
-        std::string	getDarkestSecret(void);
+        // Getters:
+        std::string getFirstName(void) const;
+        std::string	getNickname(void) const;
+        std::string	getLastName(void) const;
+        std::string	getPhoneNumber(void) const;
+        std::string	getDarkestSecret(void) const;
+
+        // Constructor
+        Contact();
+
+        // Destructor
+        ~Contact();
 
     private:
+        // Attributes
         std::string	first_name;
         std::string	last_name;
         std::string	nickname;
         std::string	phone_number;
         std::string	darkest_secret;
 };
-
-#endif // CONTACT_HPP

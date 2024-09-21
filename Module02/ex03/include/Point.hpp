@@ -13,6 +13,8 @@
 #pragma	once
 
 #include "Fixed.hpp"
+#include <string>
+#include <iostream>
 #include <cstdio>
 
 class Point
@@ -33,8 +35,9 @@ class Point
 		~Point();
 		
 		//	Methods
-		int		*getCoordinates(void) const;
-		void	setCoordinates(const Fixed x, const Fixed y);
+		const Fixed		get_X(void) const;
+		const Fixed		get_Y(void) const;
+		void			setCoordinates(const Fixed x, const Fixed y);
 		
 		//	Arithmetic operators
 		Point 	operator-(const Point &other) const;
@@ -43,7 +46,9 @@ class Point
 		bool 	operator==(const Point &other) const;
 };
 
+
 //	bsp.cpp
+bool bsp(const Point a, const Point b, const Point c, const Point point);
 int is_valid_number(const std::string &option);
 int get_number(void);
 int	read_vertices(Point &A, Point &B, Point &C);

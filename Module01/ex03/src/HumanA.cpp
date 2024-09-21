@@ -19,10 +19,10 @@
 	ensures that the Weapon always exists and does not need additional checks.
 	It is more efficient because there is no need for pointer checks and no risk
 	of having a nullptr.	*/
-HumanA::HumanA(std::string name, Weapon &Weapon)
+HumanA::HumanA(std::string name, Weapon &club) :
+	_name(name),
+	_weapon(club)
 {
-	this->_name = name;
-	this->_weapon = Weapon;
 }
 
 //	Destructor

@@ -12,11 +12,8 @@
 
 #pragma once
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
-# include <iostream> // cin, cout, endl
-# include <string> // string class
+#include <iostream> // cin, cout, endl
+#include <string> // string class
 
 class Zombie
 {
@@ -33,5 +30,3 @@ class Zombie
 
 Zombie* newZombie(std::string name);
 void randomChump(std::string name);
-
-#endif
