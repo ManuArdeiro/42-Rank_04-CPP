@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 21:32:58 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/09/28 21:44:11 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:22:16 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Ice::~Ice()
 	std::cout << "\033[1;32mIce destructor called.\033[0m" << std::endl;
 }
 
-// Clonar
+// Clone
 AMateria* Ice::clone() const
 {
 	std::cout << "\033[1;32mClone() called from Ice.\033[0m" << std::endl;

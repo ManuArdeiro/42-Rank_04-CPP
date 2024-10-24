@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 21:45:17 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/09/29 12:39:25 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:14:16 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 // Forward declaration
 class AMateria;
 
+/*	An interface in programming (especially in languages like C++, Java, and
+	others) is a type of class that defines a set of methods that must be
+	implemented by any class that wants to use the interface. In other words,
+	an interface provides a "contract" that classes must adhere to.	*/
 class ICharacter
 {
 	public:
