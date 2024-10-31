@@ -29,17 +29,17 @@ int	main(void)
 
 	std::cout << std::endl;
 	std::cout << "\033[33m" << "METHODS:" << "\033[0m" << std::endl;
-	std::cout << "\033[34m" << "\nJin attacks a non-existing ClapTrap:\n" << "\033[0m" << std::endl;
-	Jin.attack("some other robot");
+	std::cout << "\033[34m" << "\nJon attacks Jin:\n" << "\033[0m" << std::endl;
+	Jon.attack(Jin);
 	std::cout << "\033[34m" << "\nJon attacks Jon:\n" << "\033[0m" << std::endl;
-	Jon.attack("Jon");
+	Jon.attack(Jon);
 	std::cout << "\033[34m" << "\nTim takes 2 points of damage:\n" << "\033[0m" << std::endl;
 	Tim.takeDamage(2);
 	std::cout << "\033[34m" << "\nJon repaires 4 points:\n" << "\033[0m" << std::endl;
 	Jon.beRepaired(4);
 	std::cout << "\033[34m" << "\nJin attacks Tim 11 times:\n" << "\033[0m" << std::endl;
 	for (int i = 0; i < 11; i++)
-		Jin.attack("Tim");
+		Jin.attack(Tim);
 	std::cout << "\033[34m" << "\nEnd of program:\n" << "\033[0m" << std::endl;
 	return (0);
 

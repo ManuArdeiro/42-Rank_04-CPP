@@ -20,8 +20,11 @@ ScavTrap::ScavTrap() : ClapTrap()
 	
     std::cout << "\033[32m" << "ScavTrap Default Constructor called.\n";
 	std::cout << "name =  " << this->_name<< std::endl;
+	this->_hit = 100;
 	std::cout << "hit points =  " << this->_hit << std::endl;
+	this->_energy = 50;
 	std::cout << "energy points =  " << this->_energy << std::endl;
+	this->_attack = 20;
 	std::cout << "attack damage =  " << this->_attack << std::endl;
 	std::cout << "\033[0m" << std::endl;
 }
@@ -31,28 +34,23 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_guardGate = false;
 
     std::cout << "\033[32m" << "ScavTrap Constructor with name called.\n";
-	std::cout << "name =  " << this->_name<< std::endl;
-	std::cout << "hit points =  " << this->_hit<< std::endl;
-	std::cout << "energy points =  " << this->_energy << std::endl;
-	std::cout << "attack damage =  " << this->_attack << std::endl;
-	std::cout << "\033[0m" << std::endl;
-}
-
-ScavTrap::ScavTrap(std::string name, unsigned int hit, unsigned int energy,
-	unsigned int attack) : ClapTrap(name, hit, energy, attack)
-{
-	this->_guardGate = false;
-
-    std::cout << "\033[32m" << "ScavTrap Constructor called for " << name << ".\n";
-	std::cout << "name =  " << this->_name<< std::endl;
+	this->_name = name;
+	std::cout << "name =  " << this->_name << std::endl;
+	this->_hit = 100;
 	std::cout << "hit points =  " << this->_hit << std::endl;
+	this->_energy = 50;
 	std::cout << "energy points =  " << this->_energy << std::endl;
+	this->_attack = 20;
 	std::cout << "attack damage =  " << this->_attack << std::endl;
 	std::cout << "\033[0m" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
+	this->_name = other._name;
+	this->_hit = other._hit;
+	this->_energy = other._energy;
+	this->_attack = other._attack;
 	this->_guardGate = other._guardGate;
 
     std::cout << "\033[32m" << "ScavTrap Copy Constructor called for " << this->_name << ".\n";;
@@ -62,26 +60,24 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 	std::cout << "attack damage =  " << this->_attack << std::endl;
 	std::cout << this->_name << "\033[0m" << std::endl;
 }
+
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-    if (this != &other)
-    {
-        ClapTrap::operator=(other);
-		this->_name = other._name;
-		this->_hit = other._hit;
-		this->_energy = other._energy;
-		this->_attack = other._attack;
-		this->_guardGate = other._guardGate;
-		
-        std::cout << "\033[32m" << "ScavTrap Assignment Operator called.";
-		std::cout << "name =  " << this->_name<< std::endl;
-		std::cout << "hit points =  " << this->_hit << std::endl;
-		std::cout << "energy points =  " << this->_energy << std::endl;
-		std::cout << "attack damage =  " << this->_attack << std::endl;
-		std::cout << "\033[0m" << std::endl;
-    }
+	this->_name = other._name;
+	this->_hit = other._hit;
+	this->_energy = other._energy;
+	this->_attack = other._attack;
+	this->_guardGate = other._guardGate;
+
+	std::cout << "\033[32m" << "ScavTrap Assignment Operator called.";
+	std::cout << "name =  " << this->_name<< std::endl;
+	std::cout << "hit points =  " << this->_hit << std::endl;
+	std::cout << "energy points =  " << this->_energy << std::endl;
+	std::cout << "attack damage =  " << this->_attack << std::endl;
+	std::cout << "\033[0m" << std::endl;
     return *this;
 }
+
 
 ScavTrap::~ScavTrap()
 {
@@ -91,44 +87,43 @@ ScavTrap::~ScavTrap()
 
 //	Methods:
 
-void ScavTrap::attack(const std::string &target)
+void ScavTrap::attack(ScavTrap &target)
 {
 	
 	if (this->_hit >= 1 && this->_energy >= 1)
 	{
 		std::cout << "\033[32m" << "ScravTrap " << this->_name << " attacks ";
-		std::cout << target << ", causing " << this->_attack;
-		std::cout << " points of damage!" << std::endl;
+		std::cout << target._name << ", causing " << this->_attack;
+		std::cout << " points of damage!" << "\033[0m" << std::endl;
 		this->_energy--;
 		std::cout << "name =  " << this->_name<< std::endl;
 		std::cout << "hit points =  " << this->_hit << std::endl;
 		std::cout << "energy points =  " << this->_energy << std::endl;
 		std::cout << "attack damage =  " << this->_attack << std::endl;
 		std::cout << "\033[0m" << std::endl;
+		target.takeDamage(this->_attack);
 	}
 	else if (this->_energy == 0)
 	{
 		std::cout << "\033[32m" << "ScravTrap " << this->_name;
-		std::cout << " is not able to attack to " << target;
-		std::cout << ", because he has no energy points left.\n";
+		std::cout << " is not able to attack to " << target._name;
+		std::cout << ", because he has no energy points left.\n" << "\033[0m";
 		std::cout << "name =  " << this->_name<< std::endl;
 		std::cout << "hit points =  " << this->_hit << std::endl;
 		std::cout << "energy points =  " << this->_energy << std::endl;
 		std::cout << "attack damage =  " << this->_attack << std::endl;
-		std::cout << "\033[0m" << std::endl;
-		std::cout << "\033[0m" << std::endl;		
+		std::cout << "\033[0m" << std::endl;	
 	}
 	else
 	{
 		std::cout << "\033[32m" << "ScravTrap " << this->_name;
-		std::cout << " is not able to attack to " << target;
-		std::cout << ", because he has no hit points left.\n";
+		std::cout << " is not able to attack to " << target._name;
+		std::cout << ", because he has no hit points left.\n" << "\033[0m";
 		std::cout << "name =  " << this->_name<< std::endl;
 		std::cout << "hit points =  " << this->_hit << std::endl;
 		std::cout << "energy points =  " << this->_energy << std::endl;
 		std::cout << "attack damage =  " << this->_attack << std::endl;
 		std::cout << "\033[0m" << std::endl;
-		std::cout << "\033[0m" << std::endl;	
 	}
 	return ;
 }

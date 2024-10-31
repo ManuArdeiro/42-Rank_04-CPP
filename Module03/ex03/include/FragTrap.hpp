@@ -29,8 +29,6 @@ class FragTrap: virtual public ClapTrap
 		//	Constructors:
 		FragTrap();
 		FragTrap(std::string name);
-		FragTrap(std::string name, unsigned int hit, unsigned int energy,
-			unsigned int attack);
 
 		//	Copy Constructor:
 		FragTrap(const FragTrap &other);
@@ -42,6 +40,6 @@ class FragTrap: virtual public ClapTrap
 		~FragTrap();
 		
 		//	Methods:
-		void attack(const std::string &target);
+		void attack(FragTrap &target);
 		void highFivesGuys(void);
 };

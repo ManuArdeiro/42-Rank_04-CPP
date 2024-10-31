@@ -16,9 +16,9 @@
 
 ClapTrap::ClapTrap() :
 		_name("no one"),
-		_hit(100),
-		_energy(50),
-		_attack(20)
+		_hit(10),
+		_energy(10),
+		_attack(0)
 
 {
 	std::cout << "ClapTrap Default Constructor called without values." << std::endl;
@@ -30,23 +30,9 @@ ClapTrap::ClapTrap() :
 
 ClapTrap::ClapTrap(std::string name) :
 		_name(name),
-		_hit(100),
-		_energy(50),
-		_attack(20)
-{
-	std::cout << "ClapTrap Constructor called for " << name <<  " with:" << std::endl;
-	std::cout << "name =  " << this->_name << std::endl;
-	std::cout << "hit points =  " << this->_hit << std::endl;
-	std::cout << "energy points =  " << this->_energy << std::endl;
-	std::cout << "attack damage =  " << this->_attack << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name, unsigned hit, unsigned int energy,
-	unsigned int attack) : 
-		_name(name),
-		_hit(hit),
-		_energy(energy),
-		_attack(attack)
+		_hit(10),
+		_energy(10),
+		_attack(0)
 {
 	std::cout << "ClapTrap Constructor called for " << name <<  " with:" << std::endl;
 	std::cout << "name =  " << this->_name << std::endl;
@@ -94,22 +80,24 @@ ClapTrap::~ClapTrap()
 // Methods:
 
 
-void ClapTrap::attack(const std::string &target)
+void ClapTrap::attack(ClapTrap &target)
 {
 	if (this->_hit >= 1 && this->_energy >= 1)
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks " << target;
+		std::cout << "ClapTrap " << this->_name << " attacks " << target._name;
 		std::cout << ", causing " << this->_attack << " points of damage!" << std::endl;
 		this->_energy--;
+		target.takeDamage(this->_attack);
+		std::cout << "ClapTrap " << target._name << " has " << target._hit << " hit points left!" << std::endl;
 	}
 	else if (this->_energy == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " is not able to attack to " << target;
+		std::cout << "ClapTrap " << this->_name << " is not able to attack to " << target._name;
 		std::cout << ", because he has no energy points left." << std::endl;		
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " is not able to attack to " << target;
+		std::cout << "ClapTrap " << this->_name << " is not able to attack to " << target._name;
 		std::cout << ", because he has no hit points left." << std::endl;	
 	}
 	return ;		
@@ -130,6 +118,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << " points of damage and it has " << this->_hit;
 		std::cout << " hit points left!" << std::endl;
 	}
+	std::cout << std::endl;
 	return ;
 }
 

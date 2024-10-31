@@ -28,7 +28,7 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(std::string name, unsigned int hit, unsigned int energy,
-			unsigned int damage);
+			unsigned int attack);
 		
 		//	Copy constructor
 		ClapTrap(const ClapTrap &other);
@@ -40,7 +40,7 @@ class ClapTrap
 		~ClapTrap();
 
 		//	Methods
-		void attack(const std::string& target);
+		void attack(ClapTrap &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };

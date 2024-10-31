@@ -19,8 +19,11 @@ FragTrap::FragTrap() : ClapTrap()
 	
     std::cout << "\033[31m" << "FragTrap Default Constructor called.\n";
 	std::cout << "name =  " << this->_name << std::endl;
+	this->_hit = 100;
 	std::cout << "hit points =  " << this->_hit << std::endl;
+	this->_energy = 100;
 	std::cout << "energy points =  " << this->_energy << std::endl;
+	this->_attack = 30;
 	std::cout << "attack damage =  " << this->_attack << std::endl;
 	std::cout << "\033[0m" << std::endl;
 }
@@ -30,20 +33,11 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
     std::cout << "\033[31m" << "FragTrap Constructor called for " << name << ".\n";
 	std::cout << "name =  " << this->_name << std::endl;
+	this->_hit = 100;
 	std::cout << "hit points =  " << this->_hit << std::endl;
+	this->_energy = 100;
 	std::cout << "energy points =  " << this->_energy << std::endl;
-	std::cout << "attack damage =  " << this->_attack << std::endl;
-	std::cout << "\033[0m" << std::endl;
-}
-
-FragTrap::FragTrap(std::string name, unsigned int hit, unsigned int energy,
-	unsigned int attack) : ClapTrap(name, hit, energy, attack)
-{
-
-    std::cout << "\033[31m" << "FragTrap Constructor called for " << name << ".\n";
-	std::cout << "name =  " << this->_name << std::endl;
-	std::cout << "hit points =  " << this->_hit << std::endl;
-	std::cout << "energy points =  " << this->_energy << std::endl;
+	this->_attack = 30;
 	std::cout << "attack damage =  " << this->_attack << std::endl;
 	std::cout << "\033[0m" << std::endl;
 }
@@ -65,21 +59,17 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
-    if (this != &other)
-    {
-        ClapTrap::operator=(other);
-		this->_name = other._name;
-		this->_hit = other._hit;
-		this->_energy = other._energy;
-		this->_attack = other._attack;
-		
-        std::cout << "\033[31m" << "FragTrap Assignment Operator called.\n";
-		std::cout << "name =  " << this->_name << std::endl;
-		std::cout << "hit points =  " << this->_hit << std::endl;
-		std::cout << "energy points =  " << this->_energy << std::endl;
-		std::cout << "attack damage =  " << this->_attack << std::endl;
-		std::cout << "\033[0m" << std::endl;
-    }
+	this->_name = other._name;
+	this->_hit = other._hit;
+	this->_energy = other._energy;
+	this->_attack = other._attack;
+	
+	std::cout << "\033[31m" << "FragTrap Assignment Operator called.\n";
+	std::cout << "name =  " << this->_name << std::endl;
+	std::cout << "hit points =  " << this->_hit << std::endl;
+	std::cout << "energy points =  " << this->_energy << std::endl;
+	std::cout << "attack damage =  " << this->_attack << std::endl;
+	std::cout << "\033[0m" << std::endl;
     return *this;
 }
 
@@ -91,26 +81,27 @@ FragTrap::~FragTrap()
 
 //	Methods:
 
-void FragTrap::attack(const std::string &target)
+void FragTrap::attack(FragTrap &target)
 {
 	
 	if (this->_hit >= 1 && this->_energy >= 1)
 	{
 		std::cout << "\033[31m" << "FragTrap " << this->_name << " attacks ";
-		std::cout << target << ", causing " << this->_attack;
-		std::cout << " points of damage!" << std::endl;
+		std::cout << target._name << ", causing " << this->_attack;
+		std::cout << " points of damage!" << "\033[0m" << std::endl;
 		this->_energy--;
 		std::cout << "name =  " << this->_name<< std::endl;
 		std::cout << "hit points =  " << this->_hit << std::endl;
 		std::cout << "energy points =  " << this->_energy << std::endl;
 		std::cout << "attack damage =  " << this->_attack << std::endl;
 		std::cout << "\033[0m" << std::endl;
+		target.takeDamage(this->_attack);
 	}
 	else if (this->_energy == 0)
 	{
-		std::cout << "\033[31m" << "ScravTrap " << this->_name;
-		std::cout << " is not able to attack to " << target;
-		std::cout << ", because he has no energy points left.";
+		std::cout << "\033[31m" << "FragTrap " << this->_name;
+		std::cout << " is not able to attack to " << target._name;
+		std::cout << ", because he has no energy points left." << std::endl;
 		std::cout << "name =  " << this->_name<< std::endl;
 		std::cout << "hit points =  " << this->_hit << std::endl;
 		std::cout << "energy points =  " << this->_energy << std::endl;
@@ -120,9 +111,9 @@ void FragTrap::attack(const std::string &target)
 	}
 	else
 	{
-		std::cout << "\033[31m" << "ScravTrap " << this->_name;
-		std::cout << " is not able to attack to " << target;
-		std::cout << ", because he has no hit points left.";
+		std::cout << "\033[31m" << "FragTrap " << this->_name;
+		std::cout << " is not able to attack to " << target._name;
+		std::cout << ", because he has no hit points left." << std::endl;
 		std::cout << "name =  " << this->_name<< std::endl;
 		std::cout << "hit points =  " << this->_hit << std::endl;
 		std::cout << "energy points =  " << this->_energy << std::endl;

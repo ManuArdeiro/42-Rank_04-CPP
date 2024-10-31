@@ -51,6 +51,7 @@ int	read_file(std::string &filename, std::string word, std::string replacer)
 	if (!inputFile.is_open())
 	{
 		std::cerr << "Input file can not be opened!!" << std::endl;
+		std::remove((filename + ".replace").c_str());
 		return (EXIT_FAILURE);
 	}
 	if (!outputFile.is_open()) {

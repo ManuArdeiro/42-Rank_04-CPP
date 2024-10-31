@@ -29,7 +29,7 @@ DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
 }
 
 // Constructor with name
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name+ "_clap_name"), ScavTrap(name+ "_clap_name")
 {
     this->_name = name;
     this->_hit = FragTrap::_hit;  // FragTrap inheritance
@@ -42,25 +42,6 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Frag
 	std::cout << "energy points =  " << this->_energy << std::endl;
 	std::cout << "attack damage =  " << this->_attack<< "\033[0m"  << std::endl;
 }
-
-// Constructor with name and parameters
-DiamondTrap::DiamondTrap(std::string name, unsigned int hit, unsigned int energy,
-	unsigned int attack) : ClapTrap(name + "_clap_name", hit, energy, attack)
-{
-    this->_name = name;
-    this->_hit = FragTrap::_hit;  // FragTrap inheritance
-    this->_energy = ScavTrap::_energy;  // ScavTrap inheritance
-    this->_attack = FragTrap::_attack;  // FragTrap inheritance
-
-    std::cout << "\033[35m" << "DiamondTrap Constructor called for " << name << ".\n";
-	std::cout << "\033[35m" << "name =  " << this->_name<< std::endl;
-	std::cout << "\033[35m" << "ClapTrap name =  " << ClapTrap::_name << std::endl;
-	std::cout << "\033[35m" << "hit points =  " << this->getHit() << std::endl;
-	std::cout << "\033[35m" << "energy points =  " << this->getEnergy() << std::endl;
-	std::cout << "\033[35m" << "attack damage =  " << this->getAttack() << std::endl;
-	std::cout << "\033[0m" << std::endl;
-}
-
 
 // Copy Constructor
 DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), FragTrap(other), ScavTrap(other)
@@ -79,14 +60,11 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), FragTrap(o
 // Operador de asignación
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
-    if (this != &other)
-    {
-        ClapTrap::operator=(other);
-        this->_name = other._name;
-        this->_hit = other._hit;
-        this->_energy = other._energy;
-        this->_attack = other._attack;
-    }
+	this->_name = other._name;
+	this->_hit = other._hit;
+	this->_energy = other._energy;
+	this->_attack = other._attack;
+
     std::cout << "\033[35m" << "DiamondTrap Assignment Operator called for ";
 	std::cout << this->_name << std::endl;
 	std::cout << "\033[35m" << "name =  " << this->_name<< std::endl;
@@ -102,7 +80,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "\033[35m" << "DiamondTrap Destructor for ";
-	std::cout << this->_name << std::cout << "\033[0m" << std::endl;
+	std::cout << this->_name << std::endl;
 }
 
 // Method whoAmI
@@ -113,7 +91,7 @@ void DiamondTrap::whoAmI()
 }
 
 // Method attack (use the ScavTrap attack)
-void DiamondTrap::attack(const std::string &target)
+void DiamondTrap::attack(DiamondTrap &target)
 {
     ScavTrap::attack(target);
 }

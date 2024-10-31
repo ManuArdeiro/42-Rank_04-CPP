@@ -29,8 +29,6 @@ class ScavTrap: virtual public ClapTrap
 		//	Constructors:
 		ScavTrap();
 		ScavTrap(std::string name);
-		ScavTrap(std::string name, unsigned int hit, unsigned int energy,
-			unsigned int attack);
 
 		//	Copy Constructor:
 		ScavTrap(const ScavTrap &other);
@@ -42,6 +40,6 @@ class ScavTrap: virtual public ClapTrap
 		~ScavTrap();
 		
 		//	Methods:
-		void attack(const std::string &target);
+		void attack(ScavTrap &target);
 		void guardGate(void);
 };

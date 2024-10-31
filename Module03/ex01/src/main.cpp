@@ -21,38 +21,28 @@ int	main(void)
 	ScavTrap TomST;
 	std::cout << "\033[33m" << "\nConstructor ScavTrap with name SamST -> ScavTrap SamST(\"SamST\")\n" << "\033[0m" << std::endl;
 	ScavTrap SamST("SamST");
-	std::cout << "\033[33m" << "\nConstructor ScavTrap with name JonST and parameters -> ScavTrap JonST(\"JonST\", 3, 2, 1)\n" << "\033[0m" << std::endl;
-	ScavTrap JonST("JonST", 3, 2, 1);
-	std::cout << "\033[33m" << "\nCopy Constructor ScavTrap from JonST -> ScavTrap JinST(JonST)\n" << "\033[0m" << std::endl;
-	ScavTrap JinST(JonST);
+	std::cout << "\033[33m" << "\nCopy Constructor ScavTrap from SamST -> ScavTrap JinST(SamST)\n" << "\033[0m" << std::endl;
+	ScavTrap JinST(SamST);
 	std::cout << "\033[33m" << "\nCopy Assignment Operator ScavTrap TimCT from JinCT -> ScavTrap TimST = JinST\n" << "\033[0m" << std::endl;
 	ScavTrap TimST = JinST;
-
 	std::cout << std::endl;
-	std::cout << "\033[33m" << "METHODS:" << "\033[0m" << std::endl;
-	std::cout << "\033[33m" << "\nConstructor ScavTrap with name RoiST and only 5 energy points ";
-	std::cout << "-> ScavTrap RoiST(\"RoiST\",100, 5, 20)\n\033[0m" << std::endl;
-	ScavTrap RoiST("RoiST",100, 5, 20);
-	std::cout << "\033[33m" << "\nRoiST attacks RoiST: RoiST.attack(\"JonST\")\n" << "\033[0m" << std::endl;
-	RoiST.attack("JonST");
-	std::cout << "\033[33m" << "\nRoiST takes 2 points of damage: RoiST.takeDamage(2)\n" << "\033[0m" << std::endl;
-	RoiST.takeDamage(2);
-	std::cout << "\033[33m" << "\nRoiST repaires 4 points: RoiST.beRepaired(4)\n" << "\033[0m" << std::endl;
-	RoiST.beRepaired(4);
-	std::cout << "\033[33m" << "\nRoiST attacks TimST 4 TimCTes: 4 x RoiST.attack(\"TimST\")\n" << "\033[0m" << std::endl;
-	for (int i = 0; i < 4; i++)
-		RoiST.attack("TimST");
-	std::cout << "\033[33m" << "\nRoiST repaires 4 points: RoiST.beRepaired(4)\n" << "\033[0m" << std::endl;
-	RoiST.beRepaired(4);
-	std::cout << "\033[33m" << "\nConstructor ScavTrap with name IriaST and only 5 hit points ";
-	std::cout << "-> ScavTrap IriaST(\"IriaST\",5, 50, 20)\n\033[0m" << std::endl;
-	ScavTrap IriaST("IriaST",5, 5, 20);
-	std::cout << "\033[33m" << "\nIriaST takes 6 points of damage: IriaST.takeDamage(6)\n" << "\033[0m" << std::endl;
-	IriaST.takeDamage(6);
-	std::cout << "\033[33m" << "\nIriaST attacks RoiST: IriaST.attack(\"RoiST\")\n" << "\033[0m" << std::endl;
-	IriaST.attack("RoiST");
 	
+	std::cout << "\033[33m" << "METHODS:" << "\033[0m" << std::endl;
+	std::cout << "\033[33m" << "\nSamST attacks JinST: SamST.attack(JinST)\n" << "\033[0m" << std::endl;
+	SamST.attack(JinST);
+	std::cout << "\033[33m" << "\nSamST repaires 3 points: SamST.beRepaired(3)\n" << "\033[0m" << std::endl;
+	SamST.beRepaired(3);
+	std::cout << "\033[33m" << "\nSamST takes 104 points of damage: SamST.takeDamage(104)\n" << "\033[0m" << std::endl;
+	SamST.takeDamage(104);
+	std::cout << "\033[33m" << "\nSamST attacks TomST: SamST.attack(TomST)\n" << "\033[0m" << std::endl;
+	SamST.attack(TomST);
+	std::cout << "\033[33m" << "\nJinST attacks TimST 52 Times: 52 x JinST.attack(TimST)\n" << "\033[0m" << std::endl;
+	for (int i = 0; i < 52; i++)
+		JinST.attack(TimST);
+	std::cout << "\033[33m" << "\nCopy Constructor ScavTrap from SamST -> ScavTrap Iria(SamST)\n" << "\033[0m" << std::endl;
+	ScavTrap IriaST(SamST);
 	std::cout << std::endl;
+	
 	std::cout << "\033[31m" << "GUARD GATE:" << "\033[0m" << std::endl;
 	std::cout << "\033[33m" << "\nIriaST uses the special feature GuardGate -> IriaST.guardGate()\n" << "\033[0m" << std::endl;
 	IriaST.guardGate();

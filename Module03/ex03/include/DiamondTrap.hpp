@@ -28,8 +28,6 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		//	Constructors:
 		DiamondTrap();
 		DiamondTrap(std::string name);
-		DiamondTrap(std::string name, unsigned int hit, unsigned int energy,
-			unsigned int attack);
 		
 		//	Copy Constructor:
 		DiamondTrap(const DiamondTrap &other);
@@ -41,5 +39,5 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap();
 
 		void whoAmI();
-		void attack(const std::string &target);
+		void attack(DiamondTrap &target);
 };
