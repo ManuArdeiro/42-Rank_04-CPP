@@ -1,11 +1,11 @@
-NAME		=	btc
+NAME		=	RPN
 
 vpath			%.hpp include
 vpath			%.cpp src
 vpath			%.o obj
 
 INCLUDE		=   -Iinclude/
-SRC			=	BitcoinExchange.cpp main.cpp
+SRC			=	RPN.cpp main.cpp
 OBJ_DIR		=   obj
 
 CC			=	c++

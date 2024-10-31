@@ -52,7 +52,8 @@
 		"typeinfo": "cpp",
 		"cstring": "cpp",
 		"list": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"*.tpp": "cpp"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
