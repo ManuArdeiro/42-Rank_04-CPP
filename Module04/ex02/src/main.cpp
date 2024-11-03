@@ -30,18 +30,51 @@
 	error.	*/
 int main(void)
 {
-	Animal *doggy_1 = new Dog();
-    Animal *catty_1 = new Cat();
-	Animal *doggy_2(doggy_1);
-	Animal *catty_2 = catty_1;
+	//Animal test;
 
-    doggy_1->makeSound();
-    catty_1->makeSound();
-	doggy_2->makeSound();
-	catty_2->makeSound();
+	std::cout << "\033[1;36m\nDog	doggy;\033[0m" << std::endl;
+	Dog		doggy;
+	std::cout << "\033[1;36m\nCat	catty;\033[0m" << std::endl;
+	Cat		catty;
 
-    delete doggy_1;
-    delete catty_1;
+	std::cout << "\033[1;36m\ndoggy.getBrain()->ideas[0] = Doggy idea\033[0m" << std::endl;
+	doggy.getBrain()->ideas[0] = "Doggy idea";
+	std::cout << "\033[1;36m\ncatty.getBrain()->ideas[0] = Catty idea\033[0m" << std::endl;
+	catty.getBrain()->ideas[0] = "Catty idea";
+
+	std::cout << "\033[1;36m\nDog	doggyCopy(doggy);\033[0m" << std::endl;
+	Dog		doggyCopy(doggy);
+	std::cout << "\033[1;36m\nCat	cattyCopy(catty);\033[0m" << std::endl;
+	Cat 	cattyCopy(catty);
+
+	std::cout << "\033[1;36m\ndoggyCopy.getBrain()->ideas[0];\033[0m" << doggyCopy.getBrain()->ideas[0] << std::endl;
+	std::cout << "\033[1;36m\ncattyCopy.getBrain()->ideas[0];\033[0m" << cattyCopy.getBrain()->ideas[0] << std::endl;
+
+	std::cout << "\033[1;36m\nAnimal *doggy_1 = new Dog();\033[0m" << std::endl;
+	Animal *doggy2 = new Dog();
+	std::cout << "\033[1;36m\nAnimal *catty_1 = new Cat();\033[0m" << std::endl;
+    Animal *catty2 = new Cat();
+
+	std::cout << "\033[1;36m\ndoggy.makeSound();\033[0m" << std::endl;
+	doggy.makeSound();
+	std::cout << "\033[1;36m\ndoggyCopy.makeSound();\033[0m" << std::endl;
+	doggyCopy.makeSound();
+	std::cout << "\033[1;36m\ndoggy2->makeSound();\033[0m" << std::endl;
+    doggy2->makeSound();
+	std::cout << "\033[1;36m\ncatty.makeSound();\033[0m" << std::endl;
+	catty.makeSound();
+	std::cout << "\033[1;36m\ncattyCopy.makeSound();\033[0m" << std::endl;
+	cattyCopy.makeSound();
+	std::cout << "\033[1;36m\ncatty2->makeSound();\033[0m" << std::endl;
+    catty2->makeSound();
+
+
+    std::cout << "\033[1;36m\ndelete doggy_1;\033[0m" << std::endl;
+	delete doggy2;
+	std::cout << "\033[1;36m\ndelete catty_1;\033[0m" << std::endl;
+    delete catty2;
+
+	std::cout << "\033[1;36m\nEnd of program:\033[0m" << std::endl; 
 
 	return 0;
 }

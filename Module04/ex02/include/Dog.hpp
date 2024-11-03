@@ -35,6 +35,6 @@ class Dog : public Animal
 		void	makeSound(void) const;
 		
 		//	Getters
-		std::string	get_Type(void) const;
-		Brain		*get_brain() const;
+		std::string	getType(void) const;
+		Brain		*getBrain() const;
 };

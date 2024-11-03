@@ -62,13 +62,13 @@ void	Dog::makeSound(void) const
 
 // Getters
 
-Brain	*Dog::get_brain(void) const
+Brain	*Dog::getBrain(void) const
 {
-	std::cout << "Dog get_brain called." << std::endl;
+	std::cout << "Dog getBrain called." << std::endl;
 	return this->_brain;
 }
 
-std::string	Dog::get_Type(void) const
+std::string	Dog::getType(void) const
 {
 	return (this->_type);
 }

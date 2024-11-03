@@ -22,17 +22,11 @@ class Character : public ICharacter
 		AMateria	*inventory[4];
 
 	public:
-		// Default Constructor
+		// Constructors
 		Character();
-		
-		// Constructor with name
-		Character(std::string const & name);
-		
-		// Copy Constructor
-		Character(Character const & other);
-		
-		// Assignment operator
-		Character & operator=(Character const & other);
+		Character(std::string const &name);
+		Character(Character const &other);
+		Character &operator=(Character const &other);
 		
 		// Destructor
 		~Character();

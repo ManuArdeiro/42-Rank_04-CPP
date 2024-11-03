@@ -20,16 +20,10 @@ class MateriaSource : public IMateriaSource
 		AMateria *materias[4];
 
 	public:
-		// Default Constructor
+		// Constructors
 		MateriaSource();
-		
-		// Copy Constructor
 		MateriaSource(MateriaSource const & other);
-		
-		// Assignment operator
 		MateriaSource & operator=(MateriaSource const &other);
-		
-		// Destructor
 		~MateriaSource();
 
 		// Methods

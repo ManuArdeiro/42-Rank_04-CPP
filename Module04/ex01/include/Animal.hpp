@@ -21,7 +21,49 @@
 		Animal::operator=(other);  // Copies the Animal part
 		delete brain;              // Frees the current memory
 		brain = new Brain(*other.brain);  // Deep copy of the Brain.
-	(this code is in the Cat & Dog operator assignator).	*/
+	(this code is in the Cat & Dog operator assignator).	
+	
+	Virtual destructor:
+	When a destructor is not virtual in a base class, and you delete an object
+	of a derived class through a pointer to the base class, the destructor of
+	the derived class will not be called. This causes an "incomplete destruction"
+	where only the base class destructor is called, neglecting any cleanup that
+	the derived class destructor should perform.
+	Example:
+		Suppose you have the following class structure:
+
+			class Animal
+			{
+			public:
+				Animal() { std::cout << "Animal created\n"; }
+				~Animal() { std::cout << "Animal destroyed\n"; } // No virtual here
+			};
+
+			class Dog : public Animal
+			{
+			public:
+				Dog() { std::cout << "Dog created\n"; }
+				~Dog() { std::cout << "Dog destroyed\n"; }
+			};
+
+		And then you do the following in main:
+
+			int main()
+			{
+				Animal* animal = new Dog();
+				delete animal; // The Dog destructor will not be called without a virtual destructor in Animal
+				return 0;
+			}
+
+		Result: The output will be:
+
+			Animal created
+			Dog created
+			Animal destroyed
+
+		The Dog destructor is never called, which is a problem because any
+		resources Dog may have allocated will not be freed, potentially causing
+		a memory leak or resource issues.	*/
 
 class Animal
 {
@@ -40,6 +82,6 @@ class Animal
 		virtual void	makeSound(void) const = 0;
 		
 		//	Getters
-		virtual std::string	get_Type(void) const;
-		virtual Brain		*get_brain(void) const;
+		virtual std::string	getType(void) const;
+		virtual Brain		*getBrain(void) const;
 };

@@ -17,19 +17,15 @@
 class Ice : public AMateria
 {
 	public:
-		// Default Constructor
+		// Constructors
 		Ice();
-		
-		// Copy Constructor
-		Ice(Ice const & other);
-		
-		// Assignment operator
-		Ice & operator=(Ice const & other);
+		Ice(Ice const &other);
+		Ice &operator=(Ice const &other);
 		
 		// Destructor
 		~Ice();
 		
 		// Methods
 		AMateria* clone() const;
-		void use(ICharacter& target);
+		void use(ICharacter &target);
 };

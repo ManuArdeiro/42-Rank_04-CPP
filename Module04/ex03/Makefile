@@ -5,8 +5,7 @@ vpath			%.cpp src
 vpath			%.o obj
 
 INCLUDE		=   -Iinclude/
-SRC			=	AMateria.cpp Cure.cpp Character.cpp Ice.cpp MateriaSource.cpp \
-				Animal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp
+SRC			=	AMateria.cpp Cure.cpp Character.cpp Ice.cpp MateriaSource.cpp main.cpp
 OBJ_DIR		=   obj
 
 CC			=	c++

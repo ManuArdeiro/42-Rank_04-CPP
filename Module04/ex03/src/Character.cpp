@@ -22,7 +22,7 @@ Character::Character() :
 }
 
 // Constructo with name
-Character::Character(std::string const & name) :
+Character::Character(std::string const &name) :
 	name(name)
 {
 	std::cout << "\033[1;35mCharacter name constructor called.\033[0m" << std::endl;
@@ -31,7 +31,8 @@ Character::Character(std::string const & name) :
 }
 
 // Copy Constructor
-Character::Character(Character const & other) : name(other.name)
+Character::Character(Character const &other) : 
+    name(other.name)
 {
 	std::cout << "\033[1;35mCharacter copy constructor called.\033[0m" << std::endl;
     for (int i = 0; i < 4; ++i)
@@ -44,7 +45,7 @@ Character::Character(Character const & other) : name(other.name)
 }
 
 // Assignment operator
-Character & Character::operator=(Character const & other)
+Character &Character::operator=(Character const &other)
 {
 	std::cout << "\033[1;35mCharacter assignation operator called.\033[0m" << std::endl;
     if (this != &other)
@@ -71,7 +72,7 @@ Character::~Character()
 }
 
 // Methods
-std::string const & Character::getName() const
+std::string const &Character::getName() const
 {
     return name;
 }

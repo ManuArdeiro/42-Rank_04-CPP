@@ -34,7 +34,7 @@ Animal &Animal::operator=(const Animal &other)
     if ((this->_type == "Cat" || this->_type == "Dog")
 		&& (other._type == "Cat" || other._type == "Dog"))
     {
-		*get_brain() = *other.get_brain();
+		*getBrain() = *other.getBrain();
 	}
 	this->_type = other._type;
 	return *this;
@@ -54,14 +54,14 @@ void	Animal::makeSound(void) const
 }
 
 // Getters
-std::string	Animal::get_Type(void) const
+std::string	Animal::getType(void) const
 {
 	std::cout << "Animal getType called." << std::endl;
 	return this->_type;
 }
 
-Brain	*Animal::get_brain(void) const
+Brain	*Animal::getBrain(void) const
 {
-	std::cout << "Animal get_brain called." << std::endl;
+	std::cout << "Animal getBrain called." << std::endl;
 	return NULL;
 }

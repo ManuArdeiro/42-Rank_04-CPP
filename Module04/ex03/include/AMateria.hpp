@@ -25,23 +25,17 @@ class AMateria
 		std::string _type;
 
 	public:
-		// Constructor por defecto
+		// Constructors
 		AMateria();
-		
-		// Constructor con tipo
-		AMateria(std::string const & type);
-		
-		// Constructor de copia
+		AMateria(std::string const &type);
 		AMateria(const AMateria& other);
-		
-		// Operador de asignación
-		AMateria& operator=(const AMateria& other);
+		AMateria &operator=(const AMateria &other);
 		
 		// Destructor
 		virtual ~AMateria();
 
 		// Métodos
-		std::string const & getType() const; // Returns the materia type
+		std::string const &getType() const; // Returns the materia type
 		virtual AMateria *clone() const = 0; // Pure virtual
-		virtual void use(ICharacter& target);
+		virtual void use(ICharacter &target);
 };

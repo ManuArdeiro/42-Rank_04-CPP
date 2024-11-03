@@ -37,26 +37,49 @@
 */
 int main()
 {
+	std::cout << "\033[36m\nconst Animal* meta = new Animal();\033[0m" << std::endl;
 	const Animal* meta = new Animal();
+	std::cout << "\033[36m\nconst Animal* j = new Dog();\033[0m" << std::endl;
 	const Animal* j = new Dog();
+	std::cout << "\033[36m\nconst Animal* i = new Cat();\033[0m" << std::endl;
 	const Animal* i = new Cat();
 	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << "\033[35m\n---------------------------------\033[0m" << std::endl;
+	std::cout << "\033[36m\nmeta->getType() = " << meta->getType() << "\033[0m" << std::endl;
+	std::cout << "\033[36m\nj->getType() = " << j->getType() << "\033[0m" << std::endl;
+	std::cout << "\033[36m\ni->getType() = " << i->getType() << "\033[0m" << std::endl;
+	std::cout << "\033[35m\n---------------------------------\033[0m" << std::endl;
+	std::cout << "\033[36m\ni->makeSound();\033[0m" << std::endl;
 	i->makeSound(); //will output the cat sound!
+	std::cout << "\033[36m\nj->makeSound();\033[0m" << std::endl;
 	j->makeSound();
+	std::cout << "\033[36m\nmeta->makeSound();\033[0m" << std::endl;
 	meta->makeSound();
+	std::cout << "\033[35m\n---------------------------------\033[0m" << std::endl;
+	std::cout << "\033[36m\ndelete meta;\033[0m" << std::endl;
 	delete meta;
+	std::cout << "\033[36m\ndelete j;\033[0m" << std::endl;
 	delete j;
+	std::cout << "\033[36m\ndelete i;\033[0m" << std::endl;
 	delete i;
 
-	const WrongAnimal* a= new WrongCat();
+	std::cout << "\033[36m\nconst WrongAnimal* a = new WrongCat();\033[0m" << std::endl;
+	const WrongAnimal* a = new WrongCat();
+	std::cout << "\033[36m\nconst WrongCat* b = new WrongCat();\033[0m" << std::endl;
 	const WrongCat* b = new WrongCat();
 
-	std::cout << b->getType() << " " << std::endl;
-	b->makeSound(); //will output the wrong cat sound!
+	std::cout << "\033[35m\n---------------------------------\033[0m" << std::endl;
+	std::cout << "\033[36m\na->getType() = " << a->getType() << "\033[0m" << std::endl;
+	std::cout << "\033[36m\nb->getType() = " << b->getType() << "\033[0m" << std::endl;
+	std::cout << "\033[35m\n---------------------------------\033[0m" << std::endl;
+	std::cout << "\033[36m\na->makeSound();\033[0m" << std::endl;
 	a->makeSound();
+	std::cout << "\033[36m\nb->makeSound();\033[0m" << std::endl;
+	b->makeSound(); //will output the wrong cat sound!
+	std::cout << "\033[35m\n---------------------------------\033[0m" << std::endl;
+	std::cout << "\033[36m\ndelete a;\033[0m" << std::endl;
 	delete a;
+	std::cout << "\033[36m\ndelete b;\033[0m" << std::endl;
 	delete b;
 	return 0;
 }

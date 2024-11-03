@@ -60,12 +60,12 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(std::string type);
 		WrongAnimal(const WrongAnimal &other);
-		virtual WrongAnimal &operator=(const WrongAnimal &other);
-		virtual ~WrongAnimal();
+		WrongAnimal &operator=(const WrongAnimal &other);
+		~WrongAnimal();
 
 		// Methods
 		void	makeSound(void) const;
 		
 		//	Getters
-		virtual std::string	getType(void) const;
+		std::string	getType(void) const;
 };

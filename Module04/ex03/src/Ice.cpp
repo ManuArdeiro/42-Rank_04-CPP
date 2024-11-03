@@ -19,14 +19,14 @@ Ice::Ice() : AMateria("ice")
 }
 
 // Copy Constructor
-Ice::Ice(Ice const & other) : AMateria(other)
+Ice::Ice(Ice const &other) : AMateria(other)
 {
 	std::cout << "\033[1;32mIce copy constructor called.\033[0m" << std::endl;
     *this = other;
 }
 
 // Assignment operator
-Ice & Ice::operator=(Ice const & other)
+Ice &Ice::operator=(Ice const &other)
 {
 	std::cout << "\033[1;32mIce assignation operator called.\033[0m" << std::endl;
     if (this != &other)
@@ -50,7 +50,7 @@ AMateria* Ice::clone() const
 }
 
 // Uso de Materia
-void Ice::use(ICharacter& target)
+void Ice::use(ICharacter &target)
 {
     std::cout << "\033[1;32m* shoots an ice bolt at " << target.getName() << " *\033[0m" << std::endl;
 }

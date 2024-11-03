@@ -17,19 +17,15 @@
 class Cure : public AMateria
 {
 	public:
-		// Default Constructor
+		// Constructors
 		Cure();
-		
-		// Copy Constructor
 		Cure(Cure const & other);
-		
-		// Assignment operator
 		Cure & operator=(Cure const & other);
 		
 		// Destructor
 		~Cure();
 		
-		// Métodos
+		// Methods
 		AMateria* clone() const;
 		void use(ICharacter& target);
 };

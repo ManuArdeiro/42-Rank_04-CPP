@@ -19,14 +19,14 @@ Cure::Cure() : AMateria("cure")
 }
 
 // Constructor de copia
-Cure::Cure(Cure const & other) : AMateria(other)
+Cure::Cure(Cure const &other) : AMateria(other)
 {
 	std::cout << "\033[1;31mCure copy constructor called.\033[0m" << std::endl;
     *this = other;
 }
 
 // Operador de asignación
-Cure & Cure::operator=(Cure const & other)
+Cure &Cure::operator=(Cure const &other)
 {
 	std::cout << "\033[1;31mCure assignation operator called.\033[0m" << std::endl;
     if (this != &other)
@@ -50,6 +50,7 @@ AMateria* Cure::clone() const
 }
 
 // Uso de Materia
-void Cure::use(ICharacter& target) {
+void Cure::use(ICharacter &target)
+{
     std::cout << "\033[1;31m* heals " << target.getName() << "'s wounds *\033[0m" << std::endl;
 }

@@ -20,21 +20,21 @@ AMateria::AMateria() :
 }
 
 // Constructor with type
-AMateria::AMateria(std::string const & type) :
+AMateria::AMateria(std::string const &type) :
 	_type(type)
 {
 	std::cout << "\033[1;33mAMateria type constructor called.\033[0m" << std::endl;
 }
 
 // Copy constructor
-AMateria::AMateria(const AMateria& other)
+AMateria::AMateria(const AMateria &other)
 {
 	std::cout << "\033[1;33mAMateria copy constructor called.\033[0m" << std::endl;
     *this = other;
 }
 
 // Assignment operator
-AMateria& AMateria::operator=(const AMateria& other)
+AMateria &AMateria::operator=(const AMateria &other)
 {
 	std::cout << "\033[1;33mAMateria assignation operator called.\033[0m" << std::endl;
     if (this != &other)
@@ -51,14 +51,14 @@ AMateria::~AMateria()
 }
 
 // Getters
-std::string const & AMateria::getType() const
+std::string const &AMateria::getType() const
 {
 	std::cout << "\033[1;33mAMateria getType called.\033[0m" << std::endl;
     return _type;
 }
 
 // Materia use
-void AMateria::use(ICharacter& target)
+void AMateria::use(ICharacter &target)
 {
     std::cout << "\033[1;33m* uses an " << this->_type << " materia on " << target.getName() << " *\033[0m" << std::endl;
 }

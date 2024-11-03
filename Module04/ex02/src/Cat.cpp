@@ -55,13 +55,13 @@ void	Cat::makeSound(void) const
 
 // Getters
 
-std::string	Cat::get_Type(void) const
+std::string	Cat::getType(void) const
 {
 	return (this->_type);
 }
 
-Brain	*Cat::get_brain(void) const
+Brain	*Cat::getBrain(void) const
 {
-	std::cout << "Cat get_brain called." << std::endl;
+	std::cout << "Cat getBrain called." << std::endl;
 	return this->_brain;
 }
