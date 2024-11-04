@@ -40,8 +40,13 @@ int main(void)
         std::cout << john << std::endl;
 
         // This should throw an exception because it tries to go below 1
-		std::cout << "\033[1;34m\nTrying to decrement John's grade -> john.incrementGrade();\033[0m" << std::endl;
+		std::cout << "\033[1;34m\nTrying to increment John's grade -> john.incrementGrade();\033[0m" << std::endl;
+        std::cout << "An exception will be thrown, so we are leaving the scope (destructor called)," << std::endl;
+        std::cout << "then the exception message is typed, and the last line in this scope is not executed!!" << std::endl;
         john.incrementGrade();
+
+        std::cout << "\033[1;34m\nDecrementing John's grade -> john.decrementGrade();\033[0m" << std::endl;
+        john.decrementGrade(); // Goes to 2
     }
 	catch (const std::exception &e)
 	{

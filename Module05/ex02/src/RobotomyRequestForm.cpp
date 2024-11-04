@@ -50,18 +50,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 // Execute the form
-void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+void RobotomyRequestForm::executeAction() const
 {
-	// Check if the form is signed
-	if (!this->getIsSigned())
-	{
-		throw AForm::FormNotSignedException();
-	}
-	// Check if the executor has the right grade
-	if (executor.getGrade() > this->getGradeToExecute())
-	{
-		throw AForm::GradeTooLowException();
-	}
 	// Execute the form
 	std::cout << " *drilling noises* " << std::endl;
 	if (rand() % 2)

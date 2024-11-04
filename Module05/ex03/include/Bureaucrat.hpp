@@ -80,7 +80,7 @@ class Bureaucrat
 		
 		// Methods
 		void			signForm(AForm &form);
-		virtual void	execute(AForm const &form);
+		virtual void	executeForm(AForm const &form);
 };
 
 // Sobrecarga del operador de inserción

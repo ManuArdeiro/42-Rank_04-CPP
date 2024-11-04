@@ -51,19 +51,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 // Execute the form
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::executeAction() const
 {
-    // Check if the form is signed
-    if (!this->getIsSigned())
-	{
-        throw FormNotSignedException();
-    }
-	// Check if the executor has the right grade
-    if (executor.getGrade() > this->getGradeToExecute())
-	{
-        throw GradeTooLowException();
-    }
-
     std::ofstream outfile((this->_target + "_shrubbery").c_str());
     if (outfile.is_open())
 	{

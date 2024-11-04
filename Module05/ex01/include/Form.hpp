@@ -28,16 +28,10 @@ class Form
 		const int			_gradeToExecute;
 
 	public:
-		// Default constructor
+		// Constructors
 		Form();
-
-		// Constructor with name, gradeToSign and gradeToExecute
 		Form(const std::string &name, int gradeToSign, int gradeToExecute);
-
-		// Copy constructor
 		Form(const Form& other);
-
-		// Assignment operator
 		Form &operator=(const Form &other);
 
 		// Destructor

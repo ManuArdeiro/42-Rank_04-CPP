@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) :
 }
 
 // Copy constructor
-Bureaucrat::Bureaucrat(const Bureaucrat& other) :
+Bureaucrat::Bureaucrat(const Bureaucrat &other) :
 	_name(other._name),
 	_grade(other._grade)
 {

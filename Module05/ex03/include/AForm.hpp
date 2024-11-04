@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 20:25:36 by jolopez-          #+#    #+#             */
-/*   Updated: 2024/10/15 20:34:52 by jolopez-         ###   ########.fr       */
+/*   Updated: 2024/10/15 19:51:11 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,14 @@ class AForm
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
 
+	protected:
+		virtual void executeAction() const = 0;
+
 	public:
-		// Default constructor
+		// Constructors
 		AForm();
-
-		// Constructor with name, gradeToSign and gradeToExecute
 		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
-
-		// Copy constructor
 		AForm(const AForm& other);
-
-		// Assignment operator
 		AForm &operator=(const AForm &other);
 
 		// Destructor
@@ -81,8 +78,8 @@ class AForm
 		void		setIsSigned(bool isSigned);
 
 		// Member functions
-		void			beSigned(const Bureaucrat &bureaucrat);
-		virtual void	execute(Bureaucrat const &executor) const = 0;
+		void	beSigned(const Bureaucrat &bureaucrat);
+		void	execute(Bureaucrat const &executor) const;
 };
 
 std::ostream &operator<<(std::ostream& os, const AForm& form);

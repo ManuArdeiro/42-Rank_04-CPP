@@ -50,17 +50,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 // Execute the form
-void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+void PresidentialPardonForm::executeAction() const
 {
-	// Check if the form is signed
-	if (!this->getIsSigned())
-	{
-		throw AForm::FormNotSignedException();
-	}
-	// Check if the executor has the right grade
-	if (executor.getGrade() > this->getGradeToExecute())
-	{
-		throw AForm::GradeTooLowException();
-	}
 	std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

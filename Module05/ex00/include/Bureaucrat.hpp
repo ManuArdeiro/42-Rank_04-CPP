@@ -38,16 +38,10 @@ class Bureaucrat
 		int 				_grade;
 
 	public:
-		// Default constructor
+		// Constructors
 		Bureaucrat();
-
-		// Costructor with name and grade
 		Bureaucrat(const std::string &name, int grade);
-
-		// Copy constructor
 		Bureaucrat(const Bureaucrat &other);
-
-		// Assignment operator
 		Bureaucrat &operator=(const Bureaucrat &other);
 
 		// Destructor
@@ -75,5 +69,5 @@ class Bureaucrat
 		void	decrementGrade();
 };
 
-// Sobrecarga del operador de inserción
+// Insertion operator overload
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);

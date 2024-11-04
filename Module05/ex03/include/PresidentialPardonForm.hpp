@@ -18,21 +18,15 @@ class PresidentialPardonForm : public AForm
 		std::string _target;
 
 	public:
-		// Default constructor
+		// Constructors
 		PresidentialPardonForm();
-		
-		// Constructor with target
 		PresidentialPardonForm(const std::string &target);
-
-		// Copy constructor
 		PresidentialPardonForm(const PresidentialPardonForm &other);
-
-		// Assignment operator
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 
 		// Destructor
 		virtual ~PresidentialPardonForm();
 
 		// Execute the form
-		virtual void execute(Bureaucrat const &executor) const;
+		void executeAction() const;
 };

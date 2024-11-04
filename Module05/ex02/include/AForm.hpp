@@ -30,17 +30,14 @@ class AForm
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
 
+	protected:
+		virtual void executeAction() const = 0;
+
 	public:
-		// Default constructor
+		// Constructors
 		AForm();
-
-		// Constructor with name, gradeToSign and gradeToExecute
 		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
-
-		// Copy constructor
 		AForm(const AForm& other);
-
-		// Assignment operator
 		AForm &operator=(const AForm &other);
 
 		// Destructor
@@ -81,8 +78,8 @@ class AForm
 		void		setIsSigned(bool isSigned);
 
 		// Member functions
-		void			beSigned(const Bureaucrat &bureaucrat);
-		virtual void	execute(Bureaucrat const &executor) const = 0;
+		void	beSigned(const Bureaucrat &bureaucrat);
+		void	execute(Bureaucrat const &executor) const;
 };
 
 std::ostream &operator<<(std::ostream& os, const AForm& form);

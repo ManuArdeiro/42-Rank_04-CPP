@@ -18,21 +18,15 @@ class RobotomyRequestForm : public AForm
 		std::string _target;
 
 	public:
-		// Default constructor
+		// Constructors
 		RobotomyRequestForm();
-		
-		// Constructor with target
 		RobotomyRequestForm(const std::string &target);
-
-		// Copy constructor
 		RobotomyRequestForm(const RobotomyRequestForm &other);
-
-		// Assignment operator
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 
 		// Destructor
 		virtual ~RobotomyRequestForm();
 
 		// Execute the form
-		virtual void execute(Bureaucrat const &executor) const;
+		void executeAction() const;
 };

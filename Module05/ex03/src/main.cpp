@@ -131,45 +131,45 @@ int main(void)
         // Execution tests
 		std::cout << "\033[1;31m\n\nTESTS\033[0m" << std::endl;
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_150 ->";
-		std::cout << " bureaucrat_grade_150.signForm(shrubbery); bureaucrat_grade_150.execute(shrubbery);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_150.signForm(shrubbery); bureaucrat_grade_150.executeForm(shrubbery);\033[0m" << std::endl;
 		bureaucrat_grade_150.signForm(shrubbery);
-		bureaucrat_grade_150.execute(shrubbery);
+		bureaucrat_grade_150.executeForm(shrubbery);
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_138 ->";
-		std::cout << " bureaucrat_grade_138.signForm(shrubbery); bureaucrat_grade_138.execute(shrubbery);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_138.signForm(shrubbery); bureaucrat_grade_138.executeForm(shrubbery);\033[0m" << std::endl;
 		bureaucrat_grade_138.signForm(shrubbery);
-		bureaucrat_grade_138.execute(shrubbery);
+		bureaucrat_grade_138.executeForm(shrubbery);
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_50 ->";
-		std::cout << " bureaucrat_grade_50.signForm(shrubbery); bureaucrat_grade_50.execute(shrubbery);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_50.signForm(shrubbery); bureaucrat_grade_50.executeForm(shrubbery);\033[0m" << std::endl;
 		bureaucrat_grade_50.signForm(shrubbery);
-		bureaucrat_grade_50.execute(shrubbery);
+		bureaucrat_grade_50.executeForm(shrubbery);
 
 		std::cout << "\n" << std::endl;
 
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_138 ->";
-		std::cout << " bureaucrat_grade_138.signForm(robot); bureaucrat_grade_138.execute(robot);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_138.signForm(robot); bureaucrat_grade_138.executeForm(robot);\033[0m" << std::endl;
 		bureaucrat_grade_138.signForm(robot);
-		bureaucrat_grade_138.execute(robot);
+		bureaucrat_grade_138.executeForm(robot);
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_50 ->";
-		std::cout << " bureaucrat_grade_50.signForm(robot); bureaucrat_grade_50.execute(robot);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_50.signForm(robot); bureaucrat_grade_50.executeForm(robot);\033[0m" << std::endl;
 		bureaucrat_grade_50.signForm(robot);
-		bureaucrat_grade_50.execute(robot);
+		bureaucrat_grade_50.executeForm(robot);
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_1 ->";
-		std::cout << " bureaucrat_grade_1.signForm(robot); bureaucrat_grade_1.execute(robot);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_1.signForm(robot); bureaucrat_grade_1.executeForm(robot);\033[0m" << std::endl;
         bureaucrat_grade_1.signForm(robot);
-        bureaucrat_grade_1.execute(robot);
+        bureaucrat_grade_1.executeForm(robot);
 
 		std::cout << "\n" << std::endl;
 
 		std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_50 ->";
-		std::cout << " bureaucrat_grade_50.signForm(pardon); bureaucrat_grade_50.execute(pardon);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_50.signForm(pardon); bureaucrat_grade_50.executeForm(pardon);\033[0m" << std::endl;
 		bureaucrat_grade_50.signForm(pardon);
-		bureaucrat_grade_50.execute(pardon);
+		bureaucrat_grade_50.executeForm(pardon);
         std::cout << "\033[1;34m\nTrying to sign and execute the forms with bureaucrat_grade_1 ->";
-		std::cout << " bureaucrat_grade_1.signForm(pardon); bureaucrat_grade_1.execute(pardon);\033[0m" << std::endl;
+		std::cout << " bureaucrat_grade_1.signForm(pardon); bureaucrat_grade_1.executeForm(pardon);\033[0m" << std::endl;
 		bureaucrat_grade_1.signForm(pardon);
-        bureaucrat_grade_1.execute(pardon);
-		std::cout << "\033[1;34m\nTrying to execute the forms with bureaucrat_grade_50 -> bureaucrat_grade_50.execute(pardon);\033[0m" << std::endl;
-		bureaucrat_grade_50.execute(pardon);
+        bureaucrat_grade_1.executeForm(pardon);
+		std::cout << "\033[1;34m\nTrying to execute the forms with bureaucrat_grade_50 -> bureaucrat_grade_50.executeForm(pardon);\033[0m" << std::endl;
+		bureaucrat_grade_50.executeForm(pardon);
 		
 		std::cout << "\n" << std::endl;
     }
@@ -180,6 +180,8 @@ int main(void)
 	try
 	{
 		Intern intern;
+
+		std::cout << "\033[1;31m\n\nMake Form\033[0m" << std::endl;
 		
 		// Case 1: Create a ShrubberyCreationForm
 		std::cout << "\033[1;34m\nCreating a Shrubbery Creation Form ->";

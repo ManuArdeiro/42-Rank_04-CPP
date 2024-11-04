@@ -18,21 +18,15 @@ class ShrubberyCreationForm : public AForm
 		std::string _target;
 
 	public:
-		// Default constructor
+		// Constructors
 		ShrubberyCreationForm();
-		
-		// Constructor with target
 		ShrubberyCreationForm(const std::string &target);
-
-		// Copy constructor
 		ShrubberyCreationForm(const ShrubberyCreationForm &other);
-
-		// Assignment operator
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
 
 		// Destructor
 		virtual ~ShrubberyCreationForm();
 
 		// Execute the form
-		virtual void execute(Bureaucrat const &executor) const;
+		void executeAction() const;
 };
