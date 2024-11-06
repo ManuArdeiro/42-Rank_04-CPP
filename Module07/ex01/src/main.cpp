@@ -32,7 +32,7 @@ int main()
     ::iter(intArray, 5, printElement<int>);
 
     std::cout << "\nIterating over strArray:" << std::endl;
-    ::iter(strArray, 5, printElement<std::string>);
+    ::iter(strArray, 3, printElement<std::string>);
 
     return 0;
 }

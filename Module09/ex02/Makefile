@@ -1,11 +1,11 @@
-NAME		=	RPN
+NAME		=	PmergeMe
 
 vpath			%.hpp include
 vpath			%.cpp src
 vpath			%.o obj
 
 INCLUDE		=   -Iinclude/
-SRC			=	RPN.cpp main.cpp
+SRC			=	PmergeMe.cpp main.cpp
 OBJ_DIR		=   obj
 
 CC			=	c++

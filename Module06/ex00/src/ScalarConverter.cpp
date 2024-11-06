@@ -109,6 +109,21 @@ void ScalarConverter::convert(const std::string &literal)
 	else if (isInt(literal))
 	{
         long	n = std::strtol(literal.c_str(), NULL, 10);
+        /*  errno == ERANGE:
+                errno is a global variable that is set to ERANGE if a conversion function, like std::strtol,
+                detects that the value is too large or too small for the target type (long int in the case
+                of std::strtol).
+                If errno is ERANGE, this indicates that an overflow or underflow occurred during the conversion.
+            n < std::numeric_limits<int>::min():
+                std::numeric_limits<int>::min() returns the minimum value that an int type can store. If n
+                is less than this value, it means that it cannot fit into an int without losing precision.
+                This additional check is necessary because std::strtol converts to long int, which may have a
+                larger range than int. Therefore, after the conversion, it is essential to confirm whether n
+                falls within the range of int.
+            n > std::numeric_limits<int>::max():
+                Similar to the previous point, std::numeric_limits<int>::max() returns the maximum value that
+                an int can store. If n is greater than this value, it cannot fit into an int and would cause an
+                overflow.   */
         if (errno == ERANGE || n < std::numeric_limits<int>::min() || n > std::numeric_limits<int>::max())
             std::cout << "int: impossible" << std::endl;
 		else
@@ -179,6 +194,18 @@ bool ScalarConverter::isChar(const std::string &literal)
 
 bool ScalarConverter::isInt(const std::string &literal)
 {
+    /*  These lines check if a string (literal) can be safely converted to an
+        integer within the int range:
+            char *end;
+                Declares a pointer to track the position where the conversion stops.
+            long val = std::strtol(literal.c_str(), &end, 10);
+                Converts literal to a long integer in base 10, storing any leftover
+                characters in end.
+            return *end == '\0' && errno != ERANGE && val >= std::numeric_limits<int>::min() && val <= std::numeric_limits<int>::max();
+                Returns true if:
+                    *end == '\0': The entire string was successfully converted (no leftover characters).
+                    errno != ERANGE: No overflow or underflow occurred.
+                    val is within the int range.*/
     char *end;
     long val = std::strtol(literal.c_str(), &end, 10);
     return *end == '\0' && errno != ERANGE && val >= std::numeric_limits<int>::min() && val <= std::numeric_limits<int>::max();

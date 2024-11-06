@@ -15,6 +15,23 @@
 #include <iostream>
 #include <cctype>
 
+// Static function: Applies the operation to the operands
+static int applyOperation(char op, int a, int b)
+{
+    switch (op)
+    {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/':
+            if (b == 0)
+                throw std::runtime_error("Error: zero division.");
+            return a / b;
+        default:
+            throw std::runtime_error("Error: not a valid operator.");
+    }
+}
+
 // Constructors
 RPN::RPN()
 {
@@ -40,54 +57,54 @@ RPN::~RPN()
     std::cout << "RPN destructor called." << std::endl;
 }
 
-// Applies the operation depending on the operator
-int RPN::applyOperation(char op, int a, int b)
+// Evaluates the expression in Reverse Polish Notation
+int RPN::evaluate(const std::string& expression)
 {
-    switch (op)
-	{
-        case '+': return a + b;
-        case '-': return a - b;
-        case '*': return a * b;
-        case '/':
-            if (b == 0) throw std::runtime_error("Error: Division by zero");
-            return a / b;
-        default:
-            throw std::runtime_error("Error: Unknown operator");
+    std::istringstream tokens(expression);
+    std::string token;
+
+    while (tokens >> token)
+    {
+        processToken(token);
     }
+
+    if (stack.size() != 1)
+    {
+        throw std::runtime_error("Error: Expression is not valid.");
+    }
+
+    return stack.top(); // Final result
 }
 
-// Evaluates the expression in Reverse Polish Notation
-int RPN::evaluate(const std::string &expression)
+// Processes the token
+void RPN::processToken(const std::string& token)
 {
-    std::stack<int>		stack;
-    std::istringstream	iss(expression);	// Creates an input string stream (istringstream)
-											// from the expression, allowing it to be read token 
-											// by token as if it were a stream of input.
-    std::string 		token;
-
-    while (iss >> token)
-	{
-        if (isdigit(token[0]))
-		{
-            stack.push(token[0] - '0');  // Convierte char a int
+    if (isdigit(token[0]))
+    {
+        std::stringstream ss(token);
+        int number;
+        ss >> number; // Converts the token to an integer
+        if (ss.fail())
+        {
+            throw std::runtime_error("Error: Token is not a number.");
         }
-		else if (token.size() == 1 && std::string("+-*/").find(token[0]) != std::string::npos)
-		{
-            if (stack.size() < 2) throw std::runtime_error("Error: Invalid expression");
-            int b = stack.top(); stack.pop();
-            int a = stack.top(); stack.pop();
-            int result = applyOperation(token[0], a, b);
-            stack.push(result);
-        }
-		else
-		{
-            throw std::runtime_error("Error: Invalid token in expression");
-        }
+        stack.push(number); // Pushes the number to the stack
     }
-    if (stack.size() != 1)
-	{
-		throw std::runtime_error("Error: Invalid expression");
-	}
+    else if (token.size() == 1 && std::string("+-*/").find(token) != std::string::npos)
+    {
+        if (stack.size() < 2)
+        {
+            throw std::runtime_error("Error: not enough operands.");
+        }
+        int b = stack.top();
+        stack.pop();
+        int a = stack.top();
+        stack.pop();
 
-    return stack.top();
+        stack.push(applyOperation(token[0], a, b));
+    }
+    else
+    {
+        throw std::runtime_error("Error: not a valid token.");
+    }
 }

@@ -49,7 +49,13 @@ template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	std::cout << "Begin iterator called." << std::endl;
-    return this->c.begin();  // Access the underlying container through 'c'
+    return this->c.begin();
+	/*	In the context this->c refers to the underlying container
+		used by MutantStack, which is based on the structure of std::stack.
+		In std::stack, the elements are stored in an underlying container
+		called c, which is generally a std::deque (double-ended queue) by
+		default. This c container is a protected part of std::stack, so it
+		can be accessed in a derived class, like MutantStack.*/
 }
 
 // End iterator

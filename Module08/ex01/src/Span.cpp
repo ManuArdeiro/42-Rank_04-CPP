@@ -19,14 +19,14 @@ Span::Span(unsigned int N) :
 	std::cout << "Span constructor called with max size." << std::endl;
 }
 
-Span::Span(const Span& other) :
+Span::Span(const Span &other) :
 	_numbers(other._numbers),
 	_maxSize(other._maxSize)
 {
 	std::cout << "Span copy constructor called." << std::endl;
 }
 
-Span& Span::operator=(const Span& other)
+Span &Span::operator=(const Span &other)
 {
 	std::cout << "Span assignment operator called." << std::endl;
     if (this != &other)
@@ -45,18 +45,18 @@ Span::~Span()
 // Methods
 void Span::addNumber(int number)
 {
-    if (_numbers.size() >= _maxSize)
+    if (this->_numbers.size() >= _maxSize)
         throw std::overflow_error("Span is full, cannot add more numbers.");
-    _numbers.push_back(number);
+    this->_numbers.push_back(number);
 }
 
 int Span::shortestSpan() const
 {
 	int shortest = 0;
 	
-    if (_numbers.size() < 2)
+    if (this->_numbers.size() < 2)
         throw std::logic_error("Not enough numbers to find a span.");
-    std::vector<int> sortedNumbers = _numbers;
+    std::vector<int> sortedNumbers = this->_numbers;
     std::sort(sortedNumbers.begin(), sortedNumbers.end());
 	shortest = sortedNumbers[1] - sortedNumbers[0];
     for (size_t i = 1; i < sortedNumbers.size() - 1; ++i)
@@ -66,14 +66,15 @@ int Span::shortestSpan() const
 
 int Span::longestSpan() const
 {
-    if (_numbers.size() < 2)
+    if (this->_numbers.size() < 2)
         throw std::logic_error("Not enough numbers to find a span.");
-    int minElement = *std::min_element(_numbers.begin(), _numbers.end());
-    int maxElement = *std::max_element(_numbers.begin(), _numbers.end());
+    int minElement = *std::min_element(this->_numbers.begin(), this->_numbers.end());
+    int maxElement = *std::max_element(this->_numbers.begin(), this->_numbers.end());
     return maxElement - minElement;
 }
 
 // Get the current size of the numbers stored
-unsigned int Span::size() const {
+unsigned int Span::size() const
+{
     return _numbers.size();
 }

@@ -21,7 +21,7 @@ template <typename T>
 class Array
 {
 	private:
-		T*				_elements;	// Pointer to dynamically allocated array
+		T				*_elements;	// Pointer to dynamically allocated array
 		unsigned int	_size;		// Number of elements in the array
 
 	public:
@@ -29,14 +29,14 @@ class Array
 		Array();
 		Array(unsigned int n);
 		Array(const Array &other);
-		Array& operator=(const Array &other);
+		Array &operator=(const Array &other);
 		~Array();
 
 		// Subscript operator with bounds checking (non-const)
-		T& operator[](unsigned int index);
+		T &operator[](unsigned int index);
 
 		// Subscript operator with bounds checking (const)
-		const T& operator[](unsigned int index) const;
+		const T &operator[](unsigned int index) const;
 
 		// Method to return the size of the array
 		unsigned int size() const;

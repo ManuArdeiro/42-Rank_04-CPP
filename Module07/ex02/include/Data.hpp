@@ -20,8 +20,18 @@ struct Data
     std::string	text;
 
     // Canonical form
-    Data();
-    Data(const Data &other);
-    Data &operator=(const Data &other);
-    ~Data();
+    Data()
+    {};
+    Data(const Data &other)
+    {
+        *this = other;
+    };
+    Data &operator=(const Data &other)
+    {
+        number = other.number;
+        text = other.text;
+        return *this;
+    };
+    ~Data()
+    {};
 };

@@ -19,30 +19,22 @@
 
 int main(int argc, char** argv)
 {
+    (void)argv;
     if (argc < 2)
-	{
-        std::cerr << "Usage: ./PmergeMe <sequence_of_positive_integers>" << std::endl;
+    {
+        std::cout << "Usage: ./PmergeMe <sequence_of_positive_integers>" << std::endl;
         return 1;
     }
 
-    std::vector<int> sequence;
-    for (int i = 1; i < argc; ++i)
-	{
-        try
-		{
-            int num = std::stoi(argv[i]);
-            if (num < 0) throw std::runtime_error("Error: Negative integers are not allowed.");
-            sequence.push_back(num);
-        }
-		catch (const std::exception& e)
-		{
-            std::cerr << "Error: Invalid input '" << argv[i] << "'. Only positive integers are allowed." << std::endl;
-            return 1;
-        }
+    try
+    {
+        PmergeMe result(argc, argv);
     }
-
-    PmergeMe sorter;
-    sorter.sortAndMeasure(sequence);
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
     return 0;
 }
+

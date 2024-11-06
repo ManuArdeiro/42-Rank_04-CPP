@@ -132,7 +132,8 @@ class Span
 
 // Template function definition must be in the header file
 template <typename Iterator>
-void Span::addNumbers(Iterator begin, Iterator end) {
+void Span::addNumbers(Iterator begin, Iterator end)
+{
     if (std::distance(begin, end) + _numbers.size() > _maxSize)
         throw std::overflow_error("Adding this range will exceed the maximum size of the Span.");
     _numbers.insert(_numbers.end(), begin, end);

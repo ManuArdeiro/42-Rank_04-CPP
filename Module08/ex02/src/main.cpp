@@ -22,8 +22,8 @@ int main()
     mstack.push(5);
     mstack.push(17);
     std::cout << "Top element: " << mstack.top() << std::endl;
-    mstack.pop();
     std::cout << "Stack size after pop: " << mstack.size() << std::endl; 
+    
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
@@ -33,6 +33,8 @@ int main()
     std::cout << "\nTest 2: Iterating through the stack" << std::endl;
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
+    ++it;
+    --it;
     std::cout << "Stack elements: ";
     while (it != ite)
 	{
@@ -43,10 +45,10 @@ int main()
 
     // Test 3: Copy constructor
     std::cout << "\nTest 3: Copy constructor test" << std::endl;
-    MutantStack<int> mstackCopy(mstack);
-    std::cout << "Top element of copied stack: " << mstackCopy.top() << std::endl;
-    mstackCopy.pop();
-    std::cout << "Top element of copied stack after pop: " << mstackCopy.top() << std::endl;
+    MutantStack<int> s(mstack);
+    std::cout << "Top element of copied stack: " << s.top() << std::endl;
+    s.pop();
+    std::cout << "Top element of copied stack after pop: " << s.top() << std::endl;
 
     // Test 4: Assignment operator
     std::cout << "\nTest 4: Assignment operator test" << std::endl;
@@ -70,7 +72,7 @@ int main()
 
     // Test 6: Const iterators
     std::cout << "\nTest 6: Using const iterators" << std::endl;
-    const MutantStack<int>& constMstack = mstack;
+    const MutantStack<int> &constMstack = mstack;
     MutantStack<int>::const_iterator constIt = constMstack.begin();
     MutantStack<int>::const_iterator constIte = constMstack.end();
     std::cout << "Const stack elements: ";
@@ -90,7 +92,9 @@ int main()
     }
     std::cout << "Top element of large stack: " << largeStack.top() << std::endl;
     std::cout << "Size of large stack: " << largeStack.size() << std::endl;
+    std::cout << std::endl;
 
+    /*
     // Test 8: Using a different container type (comparison with std::list)
     std::cout << "\nTest 8: Comparison with std::list" << std::endl;
     std::list<int> testList;
@@ -106,6 +110,6 @@ int main()
         std::cout << *lit << " ";
     }
     std::cout << std::endl;
-
+    */
     return 0;
 }

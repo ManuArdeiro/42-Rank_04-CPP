@@ -75,7 +75,7 @@
 		static_cast is the most straightforward and direct option.	*/
 
 // Function to randomly generate an instance of A, B, or C
-Base* generate()
+Base *generate()
 {
     srand(static_cast<unsigned int>(time(0)));  // Seed for randomness
     int random = rand() % 3;  // Random number between 0 and 2
@@ -101,11 +101,11 @@ Base* generate()
 void identify(Base *p)
 {
     if (dynamic_cast<A*>(p))
-        std::cout << "Identified type: A" << std::endl;
+        std::cout << "Identified type (pointer): A" << std::endl;
 	else if (dynamic_cast<B*>(p))
-        std::cout << "Identified type: B" << std::endl;
+        std::cout << "Identified type (pointer): B" << std::endl;
 	else if (dynamic_cast<C*>(p))
-        std::cout << "Identified type: C" << std::endl;
+        std::cout << "Identified type (pointer): C" << std::endl;
 	else
         std::cout << "Unknown type" << std::endl;
 }
@@ -116,7 +116,7 @@ void identify(Base &p)
     try
 	{
         (void)dynamic_cast<A&>(p);
-        std::cout << "Identified type: A" << std::endl;
+        std::cout << "Identified type (reference): A" << std::endl;
     }
 	catch (const std::bad_cast&)
 	{}
@@ -124,7 +124,7 @@ void identify(Base &p)
     try
 	{
         (void)dynamic_cast<B&>(p);
-        std::cout << "Identified type: B" << std::endl;
+        std::cout << "Identified type (reference): B" << std::endl;
     }
 	catch (const std::bad_cast&)
 	{}
@@ -132,7 +132,7 @@ void identify(Base &p)
     try
 	{
         (void)dynamic_cast<C&>(p);
-        std::cout << "Identified type: C" << std::endl;
+        std::cout << "Identified type (reference): C" << std::endl;
     }
 	catch (const std::bad_cast&)
 	{}
@@ -141,7 +141,7 @@ void identify(Base &p)
 int main()
 {
     // Generate a random instance of A, B, or C
-    Base* basePtr = generate();
+    Base *basePtr = generate();
 
     // Identify the type using pointer
     identify(basePtr);

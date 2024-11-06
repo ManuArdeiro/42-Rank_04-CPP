@@ -20,14 +20,26 @@ class PmergeMe
 {
 	public:
 		// Constructors
-		PmergeMe();
+		PmergeMe(int argc, char *argv[]);
 		PmergeMe(const PmergeMe &other);
 		PmergeMe &operator=(const PmergeMe &other);
 		~PmergeMe();
 
-		void	sortAndMeasure(const std::vector<int> &sequence);
-		
+		// Methods
+		std::vector<int>	sortVector();
+		std::deque<int>		sortDeque();
+
+		// Exceptions
+		class InvalidException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 	private:
-		void	fordJohnsonSort(std::vector<int> &container);
-		void	fordJohnsonSort(std::deque<int> &container);
+		std::vector<int>	_vector;
+		std::deque<int>		_deque;
+
+		// Methods
+		std::vector<int>	vectorMergeSort(std::vector<int> temp);gcvt
+		std::deque<int>		dequeMergeSort(std::deque<int> temp);
 };

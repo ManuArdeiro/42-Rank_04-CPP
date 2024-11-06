@@ -53,7 +53,9 @@
 		"cstring": "cpp",
 		"list": "cpp",
 		"map": "cpp",
-		"*.tpp": "cpp"
+		"*.tpp": "cpp",
+		"chrono": "cpp",
+		"ratio": "cpp"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

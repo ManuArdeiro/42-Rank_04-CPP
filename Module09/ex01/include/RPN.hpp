@@ -28,8 +28,8 @@ class RPN
 		int 	evaluate(const std::string &expression);
 
 	private:
-		double	result;
+    	std::stack<int> stack;
 		
 		// Methods
-		int 	applyOperation(char op, int a, int b);
+    	void	processToken(const std::string& token);
 };

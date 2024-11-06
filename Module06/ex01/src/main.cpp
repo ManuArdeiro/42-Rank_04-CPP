@@ -17,7 +17,7 @@
 int main()
 {
     Data		data;
-	Data*		deserializedData;
+	Data        *deserializedData;
 	uintptr_t	raw;
 	
     data.number = 42;

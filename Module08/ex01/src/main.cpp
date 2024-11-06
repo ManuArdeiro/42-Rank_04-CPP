@@ -26,12 +26,14 @@ int main()
         sp.addNumber(9);
         sp.addNumber(11);
 
+        // Test 1: Shortest and longest span
+        std::cout << "\nTest 1: Shortest and longest span" << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
         std::cout << "---------------------------------" << std::endl;
 
 		// Test 2: Trying to add more numbers than allowed
-        std::cout << "Test 2: Exceeding the span capacity" << std::endl;
+        std::cout << "\nTest 2: Exceeding the span capacity" << std::endl;
         try
 		{
             sp.addNumber(20);  // This should throw an exception
@@ -43,7 +45,7 @@ int main()
         std::cout << "---------------------------------" << std::endl;
 		
 		// Test 3: Only one number, span calculation should fail
-        std::cout << "Test 3: Only one number, span should fail" << std::endl;
+        std::cout << "\nTest 3: Only one number, span should fail" << std::endl;
         Span spSingle(1);
         spSingle.addNumber(42);
         try
@@ -66,7 +68,7 @@ int main()
         std::cout << "---------------------------------" << std::endl;
 
 		// Test 4: Adding a range of numbers using iterators
-        std::cout << "Test 4: Adding range of numbers using iterators" << std::endl;
+        std::cout << "\nTest 4: Adding range of numbers using iterators" << std::endl;
         std::vector<int> numbers;
         numbers.push_back(10);
         numbers.push_back(20);
@@ -84,7 +86,7 @@ int main()
         std::cout << "---------------------------------" << std::endl;
 
         // Test 5: Large span with 10,000 numbers
-        std::cout << "Test 5: Large span with 10,000 numbers" << std::endl;
+        std::cout << "\nTest 5: Large span with 10,000 numbers" << std::endl;
         Span spLarge(10000);
         for (int i = 0; i < 10000; ++i)
             spLarge.addNumber(i);

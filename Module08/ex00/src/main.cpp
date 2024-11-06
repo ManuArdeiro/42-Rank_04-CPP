@@ -51,7 +51,7 @@ int main()
         result = easyfind(myVector, 10);
         std::cout << "Found: " << *result << std::endl;
     }
-	catch (const std::exception& e)
+	catch (const std::exception &e)
 	{
         std::cerr << e.what() << std::endl;
     }

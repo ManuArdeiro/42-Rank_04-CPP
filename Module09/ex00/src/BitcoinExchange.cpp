@@ -15,6 +15,7 @@
 #include <sstream>
 #include <iomanip>
 #include <stdexcept>
+#include <ctime>
 
 // Constructors
 BitcoinExchange::BitcoinExchange()
@@ -49,8 +50,6 @@ BitcoinExchange::~BitcoinExchange()
 	std::cout << "BitcoinExchange destructor called." << std::endl;
 }
 
-
-
 // Loads the Bitcoin database from a CSV file
 void BitcoinExchange::loadDatabase(const std::string &dbFile)
 {
@@ -77,30 +76,43 @@ void BitcoinExchange::loadDatabase(const std::string &dbFile)
     file.close();
 }
 
-
-
-// Validates the date format (YYYY-MM-DD)
-bool BitcoinExchange::isValidDate(const std::string &date) const
+bool dateExists(int year, int month, int day)
 {
-    if (date.size() != 10 || date[4] != '-' || date[7] != '-')
-	{
-		std::cerr << "Expected input: YYYY-MM-DD" << std::endl;
-        return false;
-    }
-	for (size_t i = 0; i < date.size(); ++i)
-	{
-		if (i == 4 || i == 7)
-			continue;
-		if (date[i] < '0' || date[i] > '9')
-		{
-			std::cerr << "Expected input: YYYY-MM-DD" << std::endl;
-			return false;
-		}
-	}
-    return true;
+    // Estruct tm to store the date
+    std::tm date = {};
+    date.tm_year = year - 1900; // `tm_year` counts years since 1900
+    date.tm_mon = month - 1;    // `tm_mon` is from 0 to 11
+    date.tm_mday = day;
+
+    // Try to convert the date to a time_t
+    std::time_t time = std::mktime(&date);
+
+    if (time == -1) return false;
+
+    return date.tm_year == year - 1900 &&
+           date.tm_mon == month - 1 &&
+           date.tm_mday == day;
 }
 
+// Validates that the date is in the format YYYY-MM-DD
+bool BitcoinExchange::isValidDate(const std::string &dateStr) const
+{
+    int     year, month, day;
+    char    dash1, dash2;
+    
+    std::istringstream dateStream(dateStr);
+    if (!(dateStream >> year >> dash1 >> month >> dash2 >> day))
+    {
+        return false; // Parsing failed
+    }
 
+    if (dash1 != '-' || dash2 != '-')
+    {
+        return false;
+    }
+
+    return dateExists(year, month, day);
+}
 
 // Finds the closest price for a given date
 float BitcoinExchange::getClosestPrice(const std::string &date) const
@@ -118,8 +130,6 @@ float BitcoinExchange::getClosestPrice(const std::string &date) const
     return it->second;
 }
 
-
-
 // Validates that the value is a valid float or integer in range
 bool BitcoinExchange::isValidValue(const std::string &valueStr) const
 {
@@ -133,8 +143,6 @@ bool BitcoinExchange::isValidValue(const std::string &valueStr) const
         return false;
     }
 }
-
-
 
 // Processes the input file and calculates the Bitcoin value for each date
 void BitcoinExchange::processInputFile(const std::string &inputFile) const
