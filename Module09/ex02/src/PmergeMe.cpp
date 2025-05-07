@@ -9,217 +9,100 @@
 /*   Updated: 2024/10/29 19:08:45 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "PmergeMe.hpp"
-#include <iostream>
-#include <ctime>
 #include <algorithm>
-#include <vector>
-#include <deque>
 
-// UTILS
-
-static bool ft_contains(const std::vector<int> &vecObj, const int &el)
+static void insertRemaining(std::vector<int> &sorted, const std::vector<int> &full, size_t pairCount)
 {
-    std::vector<int>::const_iterator it = std::find(vecObj.begin(), vecObj.end(), el);
-    return it != vecObj.end();
+	for (size_t i = 0; i < pairCount; ++i)
+	{
+		sorted.push_back(full[i * 2 + 1]);
+		std::inplace_merge(sorted.begin(), sorted.end() - 1, sorted.end());
+	}
+	if (full.size() % 2 != 0)
+	{
+		sorted.push_back(full.back());
+		std::inplace_merge(sorted.begin(), sorted.end() - 1, sorted.end());
+	}
 }
 
-static void ft_display(const std::vector<int> &container)
+static void insertRemaining(std::deque<int> &sorted, const std::deque<int> &full, size_t pairCount)
 {
-    for (std::vector<int>::const_iterator it = container.begin(); it != container.end(); ++it)
-        std::cout << *it << " ";
-    std::cout << std::endl;
+	for (size_t i = 0; i < pairCount; ++i)
+	{
+		sorted.push_back(full[i * 2 + 1]);
+		std::inplace_merge(sorted.begin(), sorted.end() - 1, sorted.end());
+	}
+	if (full.size() % 2 != 0)
+	{
+		sorted.push_back(full.back());
+		std::inplace_merge(sorted.begin(), sorted.end() - 1, sorted.end());
+	}
 }
 
-// CONSTRUCTORS
-
-PmergeMe::PmergeMe(int argc, char *argv[])
+PmergeMe::PmergeMe()
 {
-    std::vector<int>	orderedVector;
-    std::deque<int>		orderedDeque;
-
-    for (int i = 1; i < argc; ++i)
-    {
-        if (std::string(argv[i]).find_first_not_of("0123456789") != std::string::npos)
-            throw InvalidException();
-        int value = std::atoi(argv[i]);
-        //  Check if elements already exists:
-        if (ft_contains(this->_vector, value))
-            throw InvalidException();
-        // Add element:
-        _vector.push_back(value);
-        _deque.push_back(value);
-    }
-
-    std::cout << "Before: ";
-    ft_display(this->_vector);
-
-    clock_t start = clock();
-    orderedVector = this->sortVector();
-    clock_t end = clock();
-    double time = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000;
-
-    std::cout << "After:  ";
-    ft_display(orderedVector);
-
-    std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector (Ford-Johnson): " << time << std::endl;
-
-    start = clock();
-    orderedDeque = this->sortDeque();
-    end = clock();
-    time = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000;
-
-    std::cout << "Time to process a range of " << _deque.size() << " elements with std::deque (Ford-Johnson): " << time << std::endl;
-
-    start = clock();
-    std::sort(this->_vector.begin(), this->_vector.end());
-    end = clock();
-    time = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000;
-    std::cout << "Time to process a range of " << _vector.size() << " elements with std::vector (sort): " << time << std::endl;
-
-    start = clock();
-    std::sort(this->_deque.begin(), this->_deque.end());
-    end = clock();
-    time = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000;
-    std::cout << "Time to process a range of " << _deque.size() << " elements with std::deque (sort): " << time << std::endl;
 }
 
-PmergeMe::PmergeMe(const PmergeMe &other)
+PmergeMe::PmergeMe(const PmergeMe &src)
 {
-    std::cout << "PmergeMe copy constructor called." << std::endl;
-    (void)other;
+	(void)src;
 }
 
-PmergeMe &PmergeMe::operator=(const PmergeMe &other)
+PmergeMe &PmergeMe::operator=(const PmergeMe &rhs)
 {
-    std::cout << "PmergeMe assignment operator called." << std::endl;
-    if (this != &other)
-    {
-        // No specific data to copy here
-        (void)other;
-    }
-    return *this;
+	(void)rhs;
+	return *this;
 }
 
 PmergeMe::~PmergeMe()
 {
-    std::cout << "PmergeMe destructor called." << std::endl;
 }
 
-// METHODS
-
-std::vector<int> PmergeMe::vectorMergeSort(std::vector<int> temp)
+std::vector<int> PmergeMe::sort(const std::vector<int> &input) const
 {
-    if (temp.size() <= 1)
-        return temp;
+	std::vector<int> container = input;
+	if (container.size() < 2)
+		return container;
 
-    int mid = temp.size() / 2;
-    std::vector<int>    left(temp.begin(), temp.begin() + mid);
-    std::vector<int>    right(temp.begin() + mid, temp.end());
+	std::vector<std::pair<int, int> > pairs;
+	for (size_t i = 0; i + 1 < container.size(); i += 2)
+	{
+		if (container[i] > container[i + 1])
+			pairs.push_back(std::make_pair(container[i + 1], container[i]));
+		else
+			pairs.push_back(std::make_pair(container[i], container[i + 1]));
+	}
+	std::sort(pairs.begin(), pairs.end());
 
-    left = vectorMergeSort(left);
-    right = vectorMergeSort(right);
+	std::vector<int> sorted;
+	for (size_t i = 0; i < pairs.size(); ++i)
+		sorted.push_back(pairs[i].first);
 
-    unsigned i = 0;
-    unsigned j = 0;
-    unsigned k = 0;
-
-    while (i < left.size() && j < right.size())
-    {
-        if (left[i] < right[j])
-        {
-            temp[k] = left[i];
-            i++;
-        }
-        else
-        {
-            temp[k] = right[j];
-            j++;
-        }
-        k++;
-    }
-
-    while (i < left.size())
-    {
-        temp[k] = left[i];
-        i++;
-        k++;
-    }
-
-    while (j < right.size())
-    {
-        temp[k] = right[j];
-        j++;
-        k++;
-    }
-
-    return temp;
+	insertRemaining(sorted, container, pairs.size());
+	return sorted;
 }
 
-std::deque<int> PmergeMe::dequeMergeSort(std::deque<int> temp)
+std::deque<int> PmergeMe::sort(const std::deque<int> &input) const
 {
-    if (temp.size() <= 1)
-        return temp;
+	std::deque<int> container = input;
+	if (container.size() < 2)
+		return container;
 
-    int mid = temp.size() / 2;
-    std::deque<int> left(temp.begin(), temp.begin() + mid);
-    std::deque<int> right(temp.begin() + mid, temp.begin() + temp.size());
+	std::deque<std::pair<int, int> > pairs;
+	for (size_t i = 0; i + 1 < container.size(); i += 2)
+	{
+		if (container[i] > container[i + 1])
+			pairs.push_back(std::make_pair(container[i + 1], container[i]));
+		else
+			pairs.push_back(std::make_pair(container[i], container[i + 1]));
+	}
+	std::sort(pairs.begin(), pairs.end());
 
-    left = dequeMergeSort(left);
-    right = dequeMergeSort(right);
+	std::deque<int> sorted;
+	for (size_t i = 0; i < pairs.size(); ++i)
+		sorted.push_back(pairs[i].first);
 
-    unsigned i = 0;
-    unsigned j = 0;
-    unsigned k = 0;
-
-    while (i < left.size() && j < right.size())
-    {
-        if (left[i] < right[j])
-        {
-            temp[k] = left[i];
-            i++;
-        }
-        else
-        {
-            temp[k] = right[j];
-            j++;
-        }
-        k++;
-    }
-
-    while (i < left.size())
-    {
-        temp[k] = left[i];
-        i++;
-        k++;
-    }
-
-    while (j < right.size())
-    {
-        temp[k] = right[j];
-        j++;
-        k++;
-    }
-
-    return temp;
-}
-
-std::vector<int>    PmergeMe::sortVector()
-{
-    std::vector<int> orderedVector = vectorMergeSort(this->_vector);
-
-    return orderedVector;
-}
-
-std::deque<int>     PmergeMe::sortDeque()
-{
-    std::deque<int> orderedDeque = dequeMergeSort(this->_deque);
-
-    return orderedDeque;
-}
-
-const char *PmergeMe::InvalidException::what() const throw()
-{
-    return "Error: invalid input";
+	insertRemaining(sorted, container, pairs.size());
+	return sorted;
 }

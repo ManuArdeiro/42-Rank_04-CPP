@@ -10,36 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <vector>
-#include <deque>
-#include <string>
-#include <stdexcept>
+#ifndef PMERGEME_HPP
+# define PMERGEME_HPP
+
+# include <iostream>
+# include <vector>
+# include <deque>
+# include <cstdlib>
+
+# define VERBOSE 0
 
 class PmergeMe
 {
 	public:
-		// Constructors
-		PmergeMe(int argc, char *argv[]);
-		PmergeMe(const PmergeMe &other);
-		PmergeMe &operator=(const PmergeMe &other);
+		PmergeMe();
+		PmergeMe(const PmergeMe &src);
+		PmergeMe &operator=(const PmergeMe &rhs);
 		~PmergeMe();
 
-		// Methods
-		std::vector<int>	sortVector();
-		std::deque<int>		sortDeque();
-
-		// Exceptions
-		class InvalidException : public std::exception
-		{
-			public:
-				virtual const char *what() const throw();
-		};
-	private:
-		std::vector<int>	_vector;
-		std::deque<int>		_deque;
-
-		// Methods
-		std::vector<int>	vectorMergeSort(std::vector<int> temp);gcvt
-		std::deque<int>		dequeMergeSort(std::deque<int> temp);
+		std::vector<int>	sort(const std::vector<int> &array) const;
+		std::deque<int>		sort(const std::deque<int> &array) const;
 };
+
+#endif
